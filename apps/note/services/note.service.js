@@ -77,7 +77,6 @@ function _createNotes() {
 					txt: 'Fullstack Me Baby!',
 				},
 			},
-
 			{
 				id: 'n102',
 				type: 'img',
@@ -88,10 +87,9 @@ function _createNotes() {
 				},
 				backgroundColor: '#00d',
 			},
-
 			{
 				id: 'n103',
-				type: 'todos',
+				type: 'todo',
 				isPinned: false,
 				info: {
 					title: 'Get my stuff together',
