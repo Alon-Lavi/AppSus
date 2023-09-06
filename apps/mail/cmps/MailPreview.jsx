@@ -1,18 +1,39 @@
-import { mailService } from "../services/mail.service.js";
+import { utilService } from '../../../services/util.service.js';
+import { mailService } from '../services/mail.service.js';
 
-export function MailPreview() {
-  const mail = mailService.email; 
+
+const { useState } = React;
+const { Link } = ReactRouterDOM;
+
+export function MailPreview({ mail, onHandleDelete, onHandleStar }) {
+  const [hover, setHover] = useState(false);
+  const timestamp = mail.sentAt;
+ 
 
   return (
-    <li>
-      ID: {mail.id}<br />
-      Subject: {mail.subject}<br />
-      Body: {mail.body}<br />
-      Is Read: {mail.isRead ? 'Yes' : 'No'}<br />
-      Sent At: {new Date(mail.sentAt).toLocaleString()}<br />
-      Removed At: {mail.removedAt ? new Date(mail.removedAt).toLocaleString() : 'Not removed'}<br />
-      From: {mail.from}<br />
-      To: {mail.to}<br />
+    <li
+      className={`mail-item ${mail.isRead ? 'mail-read' : ''} ${hover ? 'list-item-hover' : ''}`}
+      onMouseOver={() => {
+        setHover(true);
+      }}
+      onMouseOut={() => {
+        setHover(false);
+      }}
+    >
+      {mail.isStared ? (
+        <i className="fa-solid fa-star golden-star" onClick={() => onHandleStar(mail)}></i>
+      ) : (
+        <i className="fa-regular fa-star mail-star" onClick={() => onHandleStar(mail)}></i>
+      )}
+      <Link to={`/mail/${mail.id}`} className="mail-link">
+        <div className="mail-index-from">{mail.from}</div>
+        <div className="mail-index-subject">{mail.subject}</div>
+
+        {!hover && <div className="mail-date"></div>}
+      </Link>
+      {hover && (
+        <i className="fa-regular fa-trash-can mail-trash" onClick={() => onHandleDelete(mail.id)}></i>
+      )}
     </li>
   );
 }

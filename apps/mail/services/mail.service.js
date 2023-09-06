@@ -1,23 +1,148 @@
 // mail service
+import { utilService } from '../../../services/util.service.js';
+import { storageService } from '../../../services/async-storage.service.js';
 
-const email = {
-    id: 'e101',
-    subject: 'Miss you!',
-    body: 'Would love to catch up sometimes',
-    isRead: false,
-    sentAt : 1551133930594,
-    removedAt : null,
-    from: 'momo@momo.com',
-    to: 'user@appsus.com'
-  };
+const EMAIL_KEY = 'emailDB';
+_createEmails();
+
+function loadMails() {
+    mailService.query().then((mails) => {
+      setMails(mails);
+    });
+  }
+
+export const mailService = {
+  query,
+  get,
+  remove,
+  deliteToTrash,
+  updateIsRead,
+};
+
+const loggedinUser = {
+  email: 'user@appsus.com',
+  fullname: 'React Appsus',
+};
+
+
+function query(filterBy = {}) {
+    return storageService.query(EMAIL_KEY).then((mails) => {
+      if (filterBy.txt) {
+        const filterText = filterBy.txt.toLowerCase();
+        return mails.filter(
+          (mail) =>
+            mail.subject.toLowerCase().includes(filterText) ||
+            mail.body.toLowerCase().includes(filterText) ||
+            mail.from.toLowerCase().includes(filterText)
+        );
+      } else {
+        return mails;
+      }
+    });
+  }
   
-  const loggedinUser = {
-    email: 'user@appsus.com',
-    fullname: 'React Appsus',
-  };
+  function clearStorage() {
+    localStorage.removeItem(EMAIL_KEY);
+  }
+
+function get(mailId) {
+    return storageService.get(EMAIL_KEY, mailId);
+  }
+
+function remove(mailId) {
+    return storageService.remove(EMAIL_KEY, mailId);
+  }
+
+function deliteToTrash(){
+
+  }
+
+function updateIsRead(mail) {
+    mail.isRead = true;
+    return storageService.put(EMAIL_KEY, mail);
+  }
+
+
+  function _createEmails() {
+ 
+    let emails = utilService.loadFromStorage(EMAIL_KEY) || [];
   
-  export const mailService = {
-    email,
-    loggedinUser
-  };
+    if (!emails || !emails.length) {
+      emails = [
+        {
+          id: 'e101',
+          subject: 'Miss you!',
+          body: 'Would loveeeeeeeee to catch up sometimes',
+          isRead: false,
+          sentAt: 1551133930594,
+          removedAt: null,
+          from: 'momo@momo.com',
+          to: 'user@appsus.com',
+        },
+        {
+          id: 'e102',
+          subject: 'Reminder: Meeting Tomorrow',
+          body: 'Just a friendly reminder that we have a meeting scheduled for tomorrow at 10am. Please come prepared with any necessary materials.',
+          isRead: true,
+          sentAt: 1620662400000,
+          removedAt: null,
+          from: 'manager@company.com',
+          to: 'user@appsus.com',
+        },
+        {
+          id: 'e103',
+          subject: 'Meeting Tomorrow',
+          body: "Hello, we have a meeting scheduled for tomorrow at 10 am. Please come prepared.",
+          isRead: false,
+          sentAt: 1643011200000,
+          removedAt: null,
+          from: 'manager@company.com',
+          to: 'user@appsus.com',
+          },
+          {
+          id: 'e104',
+          subject: 'Party Invitation',
+          body: "You're invited to our office party next Friday. Join us for a night of fun and celebration!",
+          isRead: false,
+          sentAt: 1663459200000,
+          removedAt: null,
+          from: 'events@company.com',
+          to: 'user@appsus.com',
+          },
+          {
+          id: 'e105',
+          subject: 'Product Update',
+          body: "We're excited to announce the latest product update. Check out the new features and improvements!"    ,
+          isRead: true,
+          sentAt: 1665459200000,
+          removedAt: null,
+          from: "updates@company.com",
+          to: 'user@appsus.com',
+          },
+          {
+          id: 'e106',
+          subject: "Job Opportunity",
+          body: 'We have a job opening that matches your skills and experience. Would you like to apply?',
+          isRead: false,
+          sentAt: 1673459200000,
+          removedAt: null,
+          from: 'hr@company.com',
+          to: 'user@appsus.com',
+          },
+          {
+          id: 'e107',
+          subject: 'Thank You"',
+          body:"Thank you for your recent purchase. We appreciate your business and look forward to serving you again.",
+          isRead: false,
+          sentAt: 1623459200000,
+          removedAt: null,
+          from: 'support@company.com',
+          to: 'user@appsus.com',
+          },
+    ];
+
+        utilService.saveToStorage(EMAIL_KEY, emails);
+      }
+    }
+
   
