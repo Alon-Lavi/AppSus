@@ -1,0 +1,55 @@
+.mail-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  padding: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.mail-item:hover {
+  background-color: #f5f5f5;
+}
+
+.mail-read {
+  background-color: #f5f5f5;
+}
+
+.mail-star {
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.golden-star {
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: gold;
+}
+
+.mail-link {
+  flex: 1;
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-direction: row; /* Изменил на колонку */
+
+}
+
+.mail-index-subject {
+  margin-top: auto; /* Перемещаем вниз, чтобы выравнивать снизу */
+  padding-left: 300px;
+}
+
+.mail-date {
+  color: #888;
+  font-size: 12px;
+}
+
+.mail-trash {
+  font-size: 20px;
+  cursor: pointer;
+  color: #ccc;
+}

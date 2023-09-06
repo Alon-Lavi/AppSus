@@ -5,19 +5,19 @@ import { storageService } from '../../../services/async-storage.service.js';
 const EMAIL_KEY = 'emailDB';
 _createEmails();
 
-function loadMails() {
-    mailService.query().then((mails) => {
-      setMails(mails);
-    });
-  }
+
 
 export const mailService = {
-  query,
-  get,
-  remove,
-  deliteToTrash,
-  updateIsRead,
-};
+    query,
+    get,
+    remove,
+    save,
+    getDefaultFilter,
+    getNextMailId,
+    getLastMailId,
+    deleteToTrash,
+    updateIsRead,
+  };
 
 const loggedinUser = {
   email: 'user@appsus.com',
@@ -41,30 +41,69 @@ function query(filterBy = {}) {
     });
   }
   
-  function clearStorage() {
-    localStorage.removeItem(EMAIL_KEY);
-  }
-
-function get(mailId) {
+  function get(mailId) {
     return storageService.get(EMAIL_KEY, mailId);
+    // return axios.get(CAR_KEY, carId)
   }
-
-function remove(mailId) {
+  
+  function remove(mailId) {
     return storageService.remove(EMAIL_KEY, mailId);
   }
-
-function deliteToTrash(){
-
+  function deleteToTrash(mailId) {
+    return storageService.query(EMAIL_KEY).then((mails) => {
+      const toTrashMail = mails.find((mail) => mail.id === mailId);
+      if (!toTrashMail.removedAt) {
+        toTrashMail.removedAt = new Date();
+        return storageService.put(EMAIL_KEY, toTrashMail);
+      }
+      remove(mailId);
+    });
   }
-
-function updateIsRead(mail) {
+  function updateIsRead(mail) {
     mail.isRead = true;
     return storageService.put(EMAIL_KEY, mail);
   }
+  function save(mail) {
+    return storageService
+      .query(EMAIL_KEY)
+      .then((mails) => {
+        const existingMail = mails.find((item) => item.id === mail.id);
+        if (existingMail) {
+          return storageService.put(EMAIL_KEY, mail);
+        } else {
+          return storageService.post(EMAIL_KEY, mail);
+        }
+      })
+      .catch((error) => {
+        console.error('Error while saving email:', error);
+      });
+  }
+  
+  function getDefaultFilter(change) {
+    const defaultFilter = { status: '', txt: '', isRead: '', isStared: '', lables: [], isDraft: false, removedAt: false, isSent: false };
+    return { ...defaultFilter, ...change };
+  }
+  
+  function getNextMailId(mailId) {
+    return storageService.query(EMAIL_KEY).then((mails) => {
+      let mailIdx = mails.findIndex((mail) => mail.id === mailId);
+      if (mailIdx === mails.length - 1) mailIdx = -1;
+      return mails[mailIdx + 1].id;
+    });
+  }
 
+  function getLastMailId(mailId) {
+    return storageService.query(EMAIL_KEY).then((mails) => {
+      let mailIdx = mails.findIndex((mail) => mail.id === mailId);
+      if (mailIdx === 0) mailIdx = mails.length;
+      return mails[mailIdx - 1].id;
+    });
+  }
+
+  
 
   function _createEmails() {
- 
+    clearStorage()
     let emails = utilService.loadFromStorage(EMAIL_KEY) || [];
   
     if (!emails || !emails.length) {
@@ -144,5 +183,7 @@ function updateIsRead(mail) {
         utilService.saveToStorage(EMAIL_KEY, emails);
       }
     }
-
+function clearStorage() {
+  localStorage.removeItem(EMAIL_KEY);
+}
   
