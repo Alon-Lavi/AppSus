@@ -1,6 +1,7 @@
-import { noteService } from '../services/note.service.js'
+import { NoteAdd } from '../cmps/NoteAdd.jsx'
 import { NoteList } from '../cmps/NoteList.jsx'
 import { NoteFilter } from '../cmps/NoteFilter.jsx'
+import { noteService } from '../services/note.service.js'
 import { utilService } from '../../../services/util.service.js'
 
 const { useState, useEffect } = React
@@ -28,8 +29,6 @@ export function NoteIndex() {
 			createdAt: new Date(),
 		}
 
-		console.log(duplicatedNote)
-
 		noteService
 			.save(duplicatedNote)
 			.then((res) => {
@@ -56,6 +55,7 @@ export function NoteIndex() {
 	return (
 		<section className="car-index">
 			<NoteFilter onSetFilter={onSetFilter} />
+			<NoteAdd setNotes={setNotes}></NoteAdd>
 			<NoteList notes={notes} onRemoveNote={onRemoveNote} onDuplicateNote={onDuplicateNote} />
 
 			{!notes.length && <div>Your note list is empty</div>}

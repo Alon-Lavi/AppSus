@@ -101,6 +101,21 @@ function _createNotes() {
 				},
 				backgroundColor: '#00d',
 			},
+			{
+				id: 'n104',
+				type: 'todo',
+				isPinned: false,
+				info: {
+					title: 'Get my stuff together',
+					todos: [
+						{ txt: 'Driving license', done: false },
+						{ txt: 'Coding power', done: true },
+						{ txt: 'Coding power', done: true },
+					],
+					txt: 'Some txt...',
+				},
+				backgroundColor: '#00d',
+			},
 		]
 
 		utilService.saveToStorage(NOTE_KEY, notes)
@@ -112,10 +127,11 @@ function getEmptyNote(type) {
 		id: utilService.makeId(),
 		type,
 		isPinned: false,
-		backgroundColor: 'green',
+		backgroundColor: 'whitesmoke',
 		info: {
-			title: 'title',
-			txt: 'text',
+			title: 'insert title',
+			txt: 'insert text',
 		},
+		label: 'none',
 	}
 }

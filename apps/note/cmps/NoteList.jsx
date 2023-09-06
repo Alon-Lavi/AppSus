@@ -1,4 +1,4 @@
-import {NotePreview} from '../cmps/NotePreview.jsx'
+import { NotePreview } from '../cmps/NotePreview.jsx'
 
 export function NoteList({ notes, onRemoveNote, onDuplicateNote, onChangeColorNote }) {
 	return (
