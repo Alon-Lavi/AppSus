@@ -40,7 +40,6 @@ export function NoteFilter({ onSetFilter }) {
 					placeholder="Search by type"
 					value={filterByToEdit.type}
 					onChange={handleChange}
-					onClick={onSearchClick}
 				/>
 			</form>
 		</section>
