@@ -1,0 +1,15 @@
+.long-txt-btn {
+	background-color: rgba(255, 255, 255, 0.5);
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.long-txt-btn:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.long-txt-btn:focus {
+	outline: none;
+}

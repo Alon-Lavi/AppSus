@@ -1,1 +1,5 @@
- /* note list */
+/* note list */
+.note-list {
+	columns: 180px;
+	padding: 0 10px;
+}

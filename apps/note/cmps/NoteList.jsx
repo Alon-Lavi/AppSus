@@ -1,3 +1,9 @@
 export function NoteList() {
-    return <div>note list</div>
+	return (
+		<ul className="note-list">
+			{notes.map((note) => (
+				<li key={note.id}></li>
+			))}
+		</ul>
+	)
 }
