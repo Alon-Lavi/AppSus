@@ -21,7 +21,6 @@ export function MailBoxModal({ setFilterByToEdit, inboxCount, isMenuOpen }) {
         <span className="count">{inboxCount}</span>
       </button>
       <button
-        
         className={activeButton === 'starred' ? 'active-btn' : ''}
         onClick={() => {
           setFilterByToEdit(mailService.getDefaultFilter({ isStared: true }));
