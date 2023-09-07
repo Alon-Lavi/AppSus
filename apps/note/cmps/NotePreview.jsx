@@ -3,6 +3,7 @@ import { NoteImg } from './dynamic-inputs/NoteImg.jsx'
 import { NoteTodo } from './dynamic-inputs/NoteTodo.jsx'
 import { NoteVideo } from './dynamic-inputs/NoteVideo.jsx'
 import { noteService } from '../services/note.service.js'
+import { mailService } from '../../mail/services/mail.service.js'
 
 const { useNavigate } = ReactRouterDOM
 const { useState, useRef } = React
@@ -24,6 +25,21 @@ export function NotePreview({ note, onRemoveNote, onDuplicateNote }) {
 		} else if (note.type === 'video') {
 			return <NoteVideo note={note} />
 		}
+	}
+
+	function sendAsEmail() {
+		const mappedMail = {
+			id: note.id,
+			subject: note.info.title,
+			body: note.info.txt,
+			isRead: false,
+			sentAt: new Date(),
+			removedAt: null,
+			from: 'user@appsus.com',
+		}
+		mailService.save(mappedMail).then((mail) => {
+			navigate(`/mail/${mail.id}`)
+		})
 	}
 
 	function handlePinToggle() {
@@ -100,6 +116,10 @@ export function NotePreview({ note, onRemoveNote, onDuplicateNote }) {
 
 				<button className="tooltip-btn" onClick={() => onRemoveNote(note.id)}>
 					<i className="fas fa-trash-alt"></i>
+				</button>
+
+				<button className="tooltip-btn" onClick={sendAsEmail}>
+					<i className="fas fa-envelope"></i>
 				</button>
 			</section>
 		</article>

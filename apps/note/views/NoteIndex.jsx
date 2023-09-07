@@ -2,6 +2,7 @@ import { NoteAdd } from '../cmps/NoteAdd.jsx'
 import { NoteList } from '../cmps/NoteList.jsx'
 import { NoteFilter } from '../cmps/NoteFilter.jsx'
 import { noteService } from '../services/note.service.js'
+import { showErrorMsg, showSuccessMsg } from '../../../services/event-bus.service.js'
 import { utilService } from '../../../services/util.service.js'
 
 const { useState, useEffect } = React
@@ -33,9 +34,11 @@ export function NoteIndex() {
 			.save(duplicatedNote)
 			.then((res) => {
 				setNotes((prevNotes) => [res, ...prevNotes])
+				showSuccessMsg(`Note successfully duplicated!`)
 			})
 			.catch((err) => {
 				console.log('Had issues posting note', err)
+				showErrorMsg('Problem duplicated!')
 			})
 	}
 
@@ -45,9 +48,11 @@ export function NoteIndex() {
 			.then(() => {
 				const updatedNotes = notes.filter((note) => note.id !== noteId)
 				setNotes(updatedNotes)
+				showSuccessMsg(`Note successfully removed!`)
 			})
 			.catch((err) => {
 				console.log('Had issues removing note', err)
+				showErrorMsg('Problem in removing')
 			})
 	}
 

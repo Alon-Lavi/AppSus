@@ -70,11 +70,11 @@ function _createNotes() {
 				id: 'n101',
 				createdAt: 1112222,
 				type: 'txt',
-				isPinned: false,
-				backgroundColor: 'transparent',
+				isPinned: true,
+				backgroundColor: '#FBBC05',
 				info: {
-					title: 'Fullstack Baby!',
-					txt: 'Fullstack Me Baby!',
+					title: 'Example Note!',
+					txt: 'Example Note',
 				},
 			},
 			{
@@ -83,7 +83,8 @@ function _createNotes() {
 				isPinned: false,
 				info: {
 					url: '/assets/img/audi.jpg',
-					title: 'Bobi and Me',
+					title: 'Audi!',
+					txt: 'Audi!',
 				},
 				backgroundColor: 'transparent',
 			},
@@ -94,25 +95,50 @@ function _createNotes() {
 				info: {
 					title: 'Get my stuff together',
 					todos: [
-						{ txt: 'Driving license', done: false },
+						{ txt: 'Goo shopping', done: false },
 						{ txt: 'Coding power', done: true },
+						{ txt: 'Driving license', done: true },
 					],
 				},
-				backgroundColor: 'transparent',
+				backgroundColor: '#CCFF90',
 			},
 			{
 				id: 'n104',
 				type: 'todo',
 				isPinned: false,
 				info: {
-					title: 'Get my stuff together',
+					title: 'To buy:',
 					todos: [
-						{ txt: 'Driving license', done: false },
-						{ txt: 'Coding power', done: false },
-						{ txt: 'Coding power', done: false },
+						{ txt: 'Butter', done: false },
+						{ txt: 'Tomato', done: false },
+						{ txt: 'Milk', done: false },
 					],
 				},
 				backgroundColor: 'transparent',
+			},
+			{
+				id: 'n105',
+				type: 'video',
+				isPinned: false,
+				info: {
+					url: 'https://www.youtube.com/watch?v=Gbh6p0hXk-8&ab_channel=DanAlmagor',
+					title: 'יש כח יש עבודה - בני ברמן',
+					txt: 'יש כח יש עבודה - בני ברמן',
+				},
+				backgroundColor: '#F28B82',
+				label: 'none',
+			},
+			{
+				id: 'n106',
+				type: 'video',
+				isPinned: false,
+				info: {
+					url: 'https://www.youtube.com/watch?v=bMknfKXIFA8&ab_channel=freeCodeCamp.org',
+					title: 'React Course - Beginners',
+					txt: 'React Course - Beginners Tutorial for React JavaScript Library [2022]',
+				},
+				backgroundColor: 'transparent',
+				label: 'none',
 			},
 		]
 

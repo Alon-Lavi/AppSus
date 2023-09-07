@@ -23,7 +23,7 @@ export function NoteFilter({ onSetFilter }) {
 
 	return (
 		<section className="note-filter">
-			<form className="nosubmit" onSubmit={onSubmitFilter}>
+			<form className="onsubmit" onSubmit={onSubmitFilter}>
 				<input
 					type="text"
 					id="txt"

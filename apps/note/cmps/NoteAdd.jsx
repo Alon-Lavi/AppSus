@@ -1,4 +1,5 @@
 import { noteService } from '../services/note.service.js'
+import { showErrorMsg, showSuccessMsg } from '../../../services/event-bus.service.js'
 
 const { useState } = React
 
@@ -39,9 +40,11 @@ export function NoteAdd({ setNotes }) {
 			.save(newNote)
 			.then((res) => {
 				setNotes((prevNotes) => [res, ...prevNotes])
+				showSuccessMsg(`Note successfully added! `)
 			})
 			.catch((err) => {
 				console.log('Had issues posting note', err)
+				showErrorMsg('Failed to insert note ')
 			})
 
 		setNewNoteContent('')
