@@ -1,5 +1,5 @@
 import { mailService } from '../services/mail.service.js'
-// import { noteService } from '../../note/services/note.service.js';
+import { noteService } from '../../note/services/note.service.js';
 
 const { useEffect, useState } = React
 const { useParams, useNavigate, Link } = ReactRouterDOM
@@ -34,13 +34,13 @@ export function MailDetails() {
 	}
 	function saveToNote() {
 		const newNote = noteService.getEmptyNote()
-		// newNote.info.title = mail.subject;
-		// newNote.info.txt = mail.body;
-		// newNote.info.url = mail.from;
-		// newNote.type = 'txt';
-		// noteService.save(newNote).then(() => {
-		//   navigate('/note');
-		// });
+		newNote.info.title = mail.subject;
+		newNote.info.txt = mail.body;
+		newNote.info.url = mail.from;
+		newNote.type = 'txt';
+		noteService.save(newNote).then(() => {
+		navigate('/note');
+		});
 	}
 
 	useEffect(() => {
