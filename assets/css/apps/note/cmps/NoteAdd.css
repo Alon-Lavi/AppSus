@@ -17,7 +17,3 @@
 .note-type-btn i {
 	font-size: 20px;
 }
-
-.note-type-btn.active i {
-	color: rgb(90, 181, 255);
-}

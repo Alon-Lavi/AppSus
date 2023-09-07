@@ -28,7 +28,7 @@ export function NoteAdd({ setNotes }) {
 				break
 			case 'todo':
 				const todos = newNoteContent.split(',')
-				newNote.info.todos = todos.map((todo) => ({ text: todo, done: false }))
+				newNote.info.todos = todos.map((todo) => ({ txt: todo, done: false }))
 				break
 			default:
 				newNote.info.txt = newNoteContent

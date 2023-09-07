@@ -3,8 +3,10 @@
 .note-index {
 	padding: 0 10px;
 	overflow-x: hidden;
+	background-color: whitesmoke;
 }
 
 [contentEditable='true']:hover {
 	cursor: pointer;
+	border: 1px solid black;
 }

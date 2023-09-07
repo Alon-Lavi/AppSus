@@ -24,7 +24,7 @@ nav a:active {
 }
 
 nav a.active {
-	color: darkblue;
+	/* color:s; */
 	font-weight: bold;
-	text-decoration: overline;
+	text-decoration: underline;
 }

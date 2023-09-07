@@ -2,4 +2,6 @@
 .note-list {
 	columns: 180px;
 	padding: 0 10px;
+	list-style-type: none;
+	background-color: whitesmoke;
 }

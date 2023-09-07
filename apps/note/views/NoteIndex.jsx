@@ -53,7 +53,7 @@ export function NoteIndex() {
 
 	if (!notes) return <h1>Your note list is empty</h1>
 	return (
-		<section className="car-index">
+		<section className="note-index">
 			<NoteFilter onSetFilter={onSetFilter}></NoteFilter>
 			<NoteAdd setNotes={setNotes}></NoteAdd>
 			<NoteList notes={notes} onRemoveNote={onRemoveNote} onDuplicateNote={onDuplicateNote}></NoteList>
