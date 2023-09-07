@@ -40,15 +40,38 @@ export function MailIndex() {
 		setFilterBy((prevFilterBy) => ({ ...prevFilterBy, ...filterBy }))
 	}
 
-	return (
-		<div>
-			<MailBoxFilter onSetFilter={onSetFilter} filterBy={filterBy} />
+  function onSetFilter(filterBy) {
+    console.log('filterBy' , filterBy)
+    setFilterBy((prevFilterBy) => ({ ...prevFilterBy, ...filterBy }));
+  }
+  return (
+    <div>
+       <button 
+             onClick={() => setShowCompose((prevState) => !prevState)} className="compose-btn">
+             <i className="fa-solid fa-pen"></i>
+              Compose
+             </button>
+      <MailBoxFilter 
+               onSetFilter={onSetFilter} 
+                filterBy={filterBy} />
+                
+      <div className="serch-list">
 
 			<div className="serch-list">
 				<MailSearchFilter onSetFilter={onSetFilter} filterBy={filterBy} />
 
+<<<<<<< HEAD
 				<MailList mails={mails} onHandleDelete={onHandleDelete} onHandleStar={onHandleStar} />
 			</div>
 		</div>
 	)
+=======
+      <MailList mails={mails} 
+                onHandleDelete={onHandleDelete}
+                onHandleStar={onHandleStar} />
+      </div>
+      {showCompose && <MailCompose setShowCompose={setShowCompose} />}
+    </div>
+  );
+>>>>>>> 4bd666e0f02b7653c6adaf5127430cc322e59344
 }
