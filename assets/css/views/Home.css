@@ -52,3 +52,20 @@
 	font-size: 20px;
 	margin-bottom: 10px;
 }
+.content-container {
+    position: relative;
+    text-align: center; 
+	
+}
+
+h1 {
+    position: absolute;
+    top: 50px; /* Расположение текста сверху от изображения */
+    left: 50%; /* Расположение текста по горизонтали по центру */
+    transform: translateX(-50%); /* Центрирование текста по горизонтали */
+    background: rgba(156, 95, 247, 0.7); /* Фон текста с некоторой прозрачностью */
+    padding: 20px 20px; /* Поля вокруг текста */
+    border-radius: 10px; /* Скругление углов текста */
+    font-size: 14px; /* Размер шрифта */
+    color: #ffffff; /* Цвет текста */
+}
