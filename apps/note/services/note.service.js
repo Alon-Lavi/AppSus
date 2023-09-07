@@ -70,8 +70,8 @@ function _createNotes() {
 				id: 'n101',
 				createdAt: 1112222,
 				type: 'txt',
-				isPinned: true,
-				backgroundColor: '#00d',
+				isPinned: false,
+				backgroundColor: 'transparent',
 				info: {
 					title: 'Fullstack Baby!',
 					txt: 'Fullstack Me Baby!',
@@ -82,10 +82,10 @@ function _createNotes() {
 				type: 'img',
 				isPinned: false,
 				info: {
-					url: 'http://some-img/me',
+					url: '/assets/img/audi.jpg',
 					title: 'Bobi and Me',
 				},
-				backgroundColor: '#00d',
+				backgroundColor: 'transparent',
 			},
 			{
 				id: 'n103',
@@ -97,9 +97,8 @@ function _createNotes() {
 						{ txt: 'Driving license', done: false },
 						{ txt: 'Coding power', done: true },
 					],
-					txt: 'Some txt...',
 				},
-				backgroundColor: '#00d',
+				backgroundColor: 'transparent',
 			},
 			{
 				id: 'n104',
@@ -109,12 +108,11 @@ function _createNotes() {
 					title: 'Get my stuff together',
 					todos: [
 						{ txt: 'Driving license', done: false },
-						{ txt: 'Coding power', done: true },
-						{ txt: 'Coding power', done: true },
+						{ txt: 'Coding power', done: false },
+						{ txt: 'Coding power', done: false },
 					],
-					txt: 'Some txt...',
 				},
-				backgroundColor: '#00d',
+				backgroundColor: 'transparent',
 			},
 		]
 
@@ -127,9 +125,9 @@ function getEmptyNote(type) {
 		id: utilService.makeId(),
 		type,
 		isPinned: false,
-		backgroundColor: 'whitesmoke',
+		backgroundColor: 'transparent',
 		info: {
-			title: 'insert title',
+			title: 'Untitled',
 			txt: 'insert text',
 		},
 		label: 'none',

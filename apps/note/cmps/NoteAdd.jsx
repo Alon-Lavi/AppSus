@@ -20,6 +20,9 @@ export function NoteAdd({ setNotes }) {
 		const newNote = noteService.getEmptyNote()
 		newNote.type = newNoteType
 		switch (newNote.type) {
+			case 'video':
+				newNote.info.url = newNoteContent
+				break
 			case 'img':
 				newNote.info.url = newNoteContent
 				break
@@ -35,7 +38,7 @@ export function NoteAdd({ setNotes }) {
 		noteService
 			.save(newNote)
 			.then((res) => {
-				setNotes((prevNotes) => [...prevNotes, res])
+				setNotes((prevNotes) => [res, ...prevNotes])
 			})
 			.catch((err) => {
 				console.log('Had issues posting note', err)
@@ -50,7 +53,9 @@ export function NoteAdd({ setNotes }) {
 				<input
 					type="text"
 					placeholder={
-						newNoteType === 'img'
+						newNoteType === 'video'
+							? 'Add YouTube URL'
+							: newNoteType === 'img'
 							? 'Enter an image URL'
 							: newNoteType === 'todo'
 							? `Separate todos by ','`
@@ -82,6 +87,14 @@ export function NoteAdd({ setNotes }) {
 						onClick={() => handleNoteTypeChange('img')}
 					>
 						<i className="fas fa-image"></i>
+					</button>
+
+					<button
+						type="button"
+						className={`note-type-btn ${newNoteType === 'video' ? 'active' : ''}`}
+						onClick={() => handleNoteTypeChange('video')}
+					>
+						<i className="fas fa-video"></i>
 					</button>
 				</div>
 			</div>

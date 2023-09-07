@@ -1,25 +1,30 @@
 header {
+	background: rgb(51, 51, 51);
+	border-bottom: 2px solid white;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	color: #ffffff;
+}
 
-    background: lightcyan;
-    border-bottom: 2px solid white;
+.logo {
+	margin-inline-start: 10px;
 }
 
 .app-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 0;
 }
 
 nav a {
-    margin: .5em;
+	margin: 0.5em;
 }
 
 nav a:active {
-    color: purple;
+	color: purple;
 }
 
 nav a.active {
-    color: darkblue;
-    font-weight: bold;
-    text-decoration: overline;
+	color: darkblue;
+	font-weight: bold;
+	text-decoration: overline;
 }

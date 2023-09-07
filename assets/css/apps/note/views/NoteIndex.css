@@ -1,1 +1,10 @@
- /* note index */
+/* note index */
+
+.note-index {
+	padding: 0 10px;
+	overflow-x: hidden;
+}
+
+[contentEditable='true']:hover {
+	cursor: pointer;
+}

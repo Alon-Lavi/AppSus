@@ -1,6 +1,7 @@
 import { NoteTxt } from './dynamic-inputs/NoteTxt.jsx'
 import { NoteImg } from './dynamic-inputs/NoteImg.jsx'
 import { NoteTodo } from './dynamic-inputs/NoteTodo.jsx'
+import { NoteVideo } from './dynamic-inputs/NoteVideo.jsx'
 import { noteService } from '../services/note.service.js'
 
 const { useNavigate } = ReactRouterDOM
@@ -20,6 +21,8 @@ export function NotePreview({ note, onRemoveNote, onDuplicateNote }) {
 			return <NoteImg note={note} />
 		} else if (note.type === 'todo') {
 			return <NoteTodo note={note} />
+		} else if (note.type === 'video') {
+			return <NoteVideo note={note} />
 		}
 	}
 

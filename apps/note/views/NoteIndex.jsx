@@ -32,7 +32,7 @@ export function NoteIndex() {
 		noteService
 			.save(duplicatedNote)
 			.then((res) => {
-				setNotes((prevNotes) => [...prevNotes, res])
+				setNotes((prevNotes) => [res, ...prevNotes])
 			})
 			.catch((err) => {
 				console.log('Had issues posting note', err)
@@ -54,9 +54,9 @@ export function NoteIndex() {
 	if (!notes) return <h1>Your note list is empty</h1>
 	return (
 		<section className="car-index">
-			<NoteFilter onSetFilter={onSetFilter} />
+			<NoteFilter onSetFilter={onSetFilter}></NoteFilter>
 			<NoteAdd setNotes={setNotes}></NoteAdd>
-			<NoteList notes={notes} onRemoveNote={onRemoveNote} onDuplicateNote={onDuplicateNote} />
+			<NoteList notes={notes} onRemoveNote={onRemoveNote} onDuplicateNote={onDuplicateNote}></NoteList>
 
 			{!notes.length && <div>Your note list is empty</div>}
 		</section>

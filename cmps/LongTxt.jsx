@@ -19,37 +19,22 @@ export function LongTxt({ note, txt, length = 100 }) {
 		if (txt.length < length) return txt
 		else {
 			if (isShowMore) return txt
-			else return txt.substring(0, length) + ' ...'
+			else return txt.substring(0, length)
 		}
 	}
 
 	return (
-		<p ref={noteTxtRef} onKeyUp={(ev) => changeContent(ev)} contentEditable={true} suppressContentEditableWarning={true}>
-			{getTxtToShow()}
-			{txt.length > length && <button onClick={handleClick}>{!isShowMore ? 'Show More' : 'Show Less'}</button>}
-		</p>
+		<section>
+			<p ref={noteTxtRef} onKeyUp={(ev) => changeContent(ev)} contentEditable={true} suppressContentEditableWarning={true}>
+				{getTxtToShow()}
+			</p>
+			<p>
+				{txt.length > length && (
+					<button className="long-txt-btn" onClick={handleClick}>
+						{!isShowMore ? 'Show More' : 'Show Less'}
+					</button>
+				)}
+			</p>
+		</section>
 	)
 }
-
-// export function LongTxt({ txt, length = 100 }) {
-// 	const [showMore, setShowMore] = useState(false)
-// 	const noteTxtRef = useRef(null)
-// 	const trimmedTxt = `${txt.substring(0, length)} ...`
-
-// 	function toggleShowMore() {
-// 		setShowMore((pervShowMore) => !pervShowMore)
-// 	}
-
-// 	return (
-// 		<section>
-// 			<p ref={noteTxtRef} onKeyUp={(ev) => changeContent(ev)} contentEditable={true} suppressContentEditableWarning={true}>
-// 				{showMore ? txt : trimmedTxt}
-// 			</p>
-// 			{txt.length > length && (
-// 				<button className="long-txt-btn" onClick={toggleShowMore}>
-// 					{showMore ? 'Read less' : 'Read more'}
-// 				</button>
-// 			)}
-// 		</section>
-// 	)
-// }

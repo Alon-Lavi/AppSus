@@ -13,7 +13,7 @@ export function TodoList({ todos }) {
 		<ul>
 			{todoList.map((todo, idx) => (
 				<li key={idx} onClick={() => handleTodoToggle(idx)} style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>
-					<p>{todo.text}</p>
+					<p>{todo.txt}</p>
 				</li>
 			))}
 		</ul>

@@ -30,6 +30,7 @@ export function NoteTxt({ note }) {
 				{note.info.txt}
 			</p> */}
 			{note.info.url && <p className="note-url">From: {note.info.url}</p>}
+			{}
 			<LongTxt note={note} txt={note.info.txt} length={100} />
 		</section>
 	)
