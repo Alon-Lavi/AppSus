@@ -12,7 +12,7 @@ export function NoteImg({ note }) {
 	}
 
 	function changeContent(ev) {
-		note.info.title = noteTxtRef.current.innerText
+		note.info.txt = noteTxtRef.current.innerText
 		noteService.save(note)
 	}
 

@@ -2,30 +2,54 @@ import { noteService } from '../apps/note/services/note.service.js'
 
 const { useState, useRef } = React
 
-export function LongTxt({ txt, length = 100 }) {
-	const [showMore, setShowMore] = useState(false)
+export function LongTxt({ note, txt, length = 100 }) {
+	const [isShowMore, setIsShowMore] = useState(false)
 	const noteTxtRef = useRef(null)
-	const trimmedTxt = `${txt.substring(0, length)} ...`
+
+	function handleClick() {
+		setIsShowMore((prevState) => !prevState)
+	}
 
 	function changeContent(ev) {
 		note.info.txt = noteTxtRef.current.innerText
 		noteService.save(note)
 	}
 
-	function toggleShowMore() {
-		setShowMore((pervShowMore) => !pervShowMore)
+	function getTxtToShow() {
+		if (txt.length < length) return txt
+		else {
+			if (isShowMore) return txt
+			else return txt.substring(0, length) + ' ...'
+		}
 	}
 
 	return (
-		<section>
-			<p ref={noteTxtRef} onKeyUp={(ev) => changeContent(ev)} contentEditable={true} suppressContentEditableWarning={true}>
-				{showMore ? txt : trimmedTxt}
-			</p>
-			{txt.length > length && (
-				<button className="long-txt-btn" onClick={toggleShowMore}>
-					{showMore ? 'Read less' : 'Read more'}
-				</button>
-			)}
-		</section>
+		<p ref={noteTxtRef} onKeyUp={(ev) => changeContent(ev)} contentEditable={true} suppressContentEditableWarning={true}>
+			{getTxtToShow()}
+			{txt.length > length && <button onClick={handleClick}>{!isShowMore ? 'Show More' : 'Show Less'}</button>}
+		</p>
 	)
 }
+
+// export function LongTxt({ txt, length = 100 }) {
+// 	const [showMore, setShowMore] = useState(false)
+// 	const noteTxtRef = useRef(null)
+// 	const trimmedTxt = `${txt.substring(0, length)} ...`
+
+// 	function toggleShowMore() {
+// 		setShowMore((pervShowMore) => !pervShowMore)
+// 	}
+
+// 	return (
+// 		<section>
+// 			<p ref={noteTxtRef} onKeyUp={(ev) => changeContent(ev)} contentEditable={true} suppressContentEditableWarning={true}>
+// 				{showMore ? txt : trimmedTxt}
+// 			</p>
+// 			{txt.length > length && (
+// 				<button className="long-txt-btn" onClick={toggleShowMore}>
+// 					{showMore ? 'Read less' : 'Read more'}
+// 				</button>
+// 			)}
+// 		</section>
+// 	)
+// }
