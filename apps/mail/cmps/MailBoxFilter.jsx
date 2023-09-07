@@ -7,6 +7,7 @@ export function MailBoxFilter ({ filterBy, onSetFilter }){
     const [filterByToEdit, setFilterByToEdit] = useState(filterBy);
     const [inboxCount, setInboxCount] = useState(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
     const menuRef = useRef(null);
 
     useEffect(() => {
@@ -35,6 +36,14 @@ export function MailBoxFilter ({ filterBy, onSetFilter }){
           });
     
           setInboxCount(count);
+        });
+      }
+
+      function countStarred() {
+        let count = 0;
+        mailService.query({ isStared: true }).then((starredMails) => {
+          count = starredMails.length;
+          setStarredCount(count);
         });
       }
     
