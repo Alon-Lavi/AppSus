@@ -23,49 +23,49 @@ export const mailService = {
     updateIsRead,
   };
 
-
-
-function query(filterBy = {}) {
-  return storageService.query(EMAIL_KEY).then((mails) => {
-    if (filterBy.txt) {
-      const filterText = filterBy.txt.toLowerCase();
-      mails = mails.filter(
-        (mail) =>
-          mail.subject.toLowerCase().includes(filterText) ||
-          mail.body.toLowerCase().includes(filterText) ||
-          mail.from.toLowerCase().includes(filterText)
-      );
-    }
-    if (filterBy.isRead) {
-      mails = mails.filter((mail) => mail.isRead);
-    }
-    if (filterBy.isSent) {
-      mails = mails.filter((mail) => mail.isSent);
-    }
-    if (!filterBy.isSent) {
-      mails = mails.filter((mail) => !mail.isSent);
-    }
-    if (filterBy.isStared) {
-      mails = mails.filter((mail) => mail.isStared);
-    }
-    if (filterBy.isDraft) {
-      mails = mails.filter((mail) => mail.isDraft);
-    }
-    if (filterBy.isDraft === false) {
-      mails = mails.filter((mail) => !mail.isDraft);
-    }
-    if (!filterBy.removedAt) {
-      mails = mails.filter((mail) => !mail.removedAt);
-    }
-    if (filterBy.removedAt) {
-      mails = mails.filter((mail) => mail.removedAt);
-    }
-
-    mails.sort((mail1, mail2) => mail2.sentAt - mail1.sentAt);
-
-    return mails;
-  });
-}
+  
+      function query(filterBy = {}) {
+        return storageService.query(EMAIL_KEY).then((mails) => {
+          if (filterBy.txt) {
+            const filterText = filterBy.txt.toLowerCase();
+            mails = mails.filter(
+              (mail) =>
+                mail.subject.toLowerCase().includes(filterText) ||
+                mail.body.toLowerCase().includes(filterText) ||
+                mail.from.toLowerCase().includes(filterText)
+            );
+          }
+          if (filterBy.isRead) {
+            mails = mails.filter((mail) => mail.isRead);
+          }
+          if (filterBy.isSent) {
+            mails = mails.filter((mail) => mail.isSent);
+          }
+          if (!filterBy.isSent) {
+            mails = mails.filter((mail) => !mail.isSent);
+          }
+          if (filterBy.isStared) {
+            mails = mails.filter((mail) => mail.isStared);
+          }
+          if (filterBy.isDraft) {
+            mails = mails.filter((mail) => mail.isDraft);
+          }
+          if (filterBy.isDraft === false) {
+            mails = mails.filter((mail) => !mail.isDraft);
+          }
+          if (!filterBy.removedAt) {
+            mails = mails.filter((mail) => !mail.removedAt);
+          }
+          if (filterBy.removedAt) {
+            mails = mails.filter((mail) => mail.removedAt);
+          }
+      
+          mails.sort((mail1, mail2) => mail2.sentAt - mail1.sentAt);
+      
+          return mails;
+        });
+      }
+  
   
   function get(mailId) {
     return storageService.get(EMAIL_KEY, mailId);
@@ -75,6 +75,7 @@ function query(filterBy = {}) {
   function remove(mailId) {
     return storageService.remove(EMAIL_KEY, mailId);
   }
+
   function deleteToTrash(mailId) {
     return storageService.query(EMAIL_KEY).then((mails) => {
       const toTrashMail = mails.find((mail) => mail.id === mailId);
@@ -129,7 +130,7 @@ function query(filterBy = {}) {
   
 
   function _createEmails() {
-    clearStorage()
+    
     let emails = utilService.loadFromStorage(EMAIL_KEY) || [];
   
     if (!emails || !emails.length) {

@@ -20,17 +20,17 @@ export function MailBoxModal({ setFilterByToEdit, inboxCount, isMenuOpen }) {
         </div>
         <span className="count">{inboxCount}</span>
       </button>
-      <button
+       <button
         className={activeButton === 'starred' ? 'active-btn' : ''}
-        onClick={() => {
+         onClick={() => {
           setFilterByToEdit(mailService.getDefaultFilter({ isStared: true }));
-          setActiveButton('starred');
-        }}
-      >
+         setActiveButton('starred');
+          }}
+        >
         <div>
           <i className="fa-regular fa-star box-star"></i>
-          
         </div>
+
       </button>
       <button
         className={activeButton === 'read' ? 'active-btn' : ''}
@@ -68,11 +68,11 @@ export function MailBoxModal({ setFilterByToEdit, inboxCount, isMenuOpen }) {
       </button>
       <button
         className={activeButton === 'trash' ? 'active-btn' : ''}
-        onClick={() => {
-          setFilterByToEdit(mailService.getDefaultFilter({ removedAt: !false }));
-          setActiveButton('trash');
-        }}
-      >
+         onClick={() => {
+         setFilterByToEdit(mailService.getDefaultFilter({ removedAt: !false }));
+         setActiveButton('trash');
+  }}
+>
         <div>
           <i className="fa-regular fa-trash-can filter-trash"></i>
         </div>

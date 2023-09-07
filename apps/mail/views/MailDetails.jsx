@@ -71,13 +71,13 @@ export function MailDetails() {
       <div className="mail-details-top">
         <h2>{mail.subject}</h2>
         <div className="corner-detail-btns">
-          <div class="tool-tip-button">
+          <div className="tool-tip-button">
             <i className="fa-solid fa-arrow-left" onClick={() => onBack()}></i>
-            <span class="tooltip">Go Back</span>
+            <span className="tooltip">Go Back</span>
           </div>
-          <div class="tool-tip-button">
+          <div className="tool-tip-button">
             <i onClick={saveToNote} className="fa-regular fa-paper-plane save-note"></i>
-            <span class="tooltip">Save to note</span>
+            <span className="tooltip">Save to note</span>
           </div>
         </div>
       </div>
@@ -90,7 +90,7 @@ export function MailDetails() {
       </div>
       <p>{mail.body}</p>
       <div className="mail-details-bottom">
-        <div class="tool-tip-button">
+        <div className="tool-tip-button">
           <i
             className="fa-solid fa-angle-left"
             onClick={() => {
@@ -98,9 +98,9 @@ export function MailDetails() {
             }}
           ></i>
 
-          <span class="tooltip">Last Mail</span>
+          <span className="tooltip">Last Mail</span>
         </div>
-        <div class="tool-tip-button">
+        <div className="tool-tip-button">
           <i
             className="fa-solid fa-angle-right"
             onClick={() => {
@@ -108,7 +108,7 @@ export function MailDetails() {
             }}
           ></i>
 
-          <span class="tooltip">Next Mail</span>
+          <span className="tooltip">Next Mail</span>
         </div>
         {mail.isDraft && (
           <button className="mail-details-edit" onClick={onEdit}>

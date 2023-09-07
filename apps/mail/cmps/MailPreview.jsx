@@ -8,10 +8,11 @@ const { Link } = ReactRouterDOM;
 export function MailPreview({ mail, onHandleDelete, onHandleStar }) {
   const [hover, setHover] = useState(false);
   const timestamp = mail.sentAt;
- 
+  const date = new Date(timestamp);
 
+  const mailDateString = utilService.getMailDate(date)
   return (
-    <li
+     <li
       className={`mail-item ${mail.isRead ? 'mail-read' : ''} ${hover ? 'list-item-hover' : ''}`}
       onMouseOver={() => {
         setHover(true);
@@ -29,11 +30,10 @@ export function MailPreview({ mail, onHandleDelete, onHandleStar }) {
         <div className="mail-index-from">{mail.from}</div>
         <div className="mail-index-subject">{mail.subject}</div>
 
-        {!hover && <div className="mail-date"></div>}
+        {/* <div>{mail.body}</div> */}
+        {!hover && <div className="mail-date">{mailDateString}</div>}
       </Link>
-      {hover && (
-        <i className="fa-regular fa-trash-can mail-trash" onClick={() => onHandleDelete(mail.id)}></i>
-      )}
+      {hover && <i className="fa-regular fa-trash-can mail-trash" onClick={() => onHandleDelete(mail.id)}></i>}
     </li>
   );
 }
