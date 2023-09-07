@@ -6,6 +6,10 @@ const EMAIL_KEY = 'emailDB';
 _createEmails();
 
 
+const loggedinUser = {
+  email: 'user@appsus.com',
+  fullname: 'React Appsus',
+};
 
 export const mailService = {
     query,
@@ -19,31 +23,53 @@ export const mailService = {
     updateIsRead,
   };
 
-const loggedinUser = {
-  email: 'user@appsus.com',
-  fullname: 'React Appsus',
-};
 
 
 function query(filterBy = {}) {
-    return storageService.query(EMAIL_KEY).then((mails) => {
-      if (filterBy.txt) {
-        const filterText = filterBy.txt.toLowerCase();
-        return mails.filter(
-          (mail) =>
-            mail.subject.toLowerCase().includes(filterText) ||
-            mail.body.toLowerCase().includes(filterText) ||
-            mail.from.toLowerCase().includes(filterText)
-        );
-      } else {
-        return mails;
-      }
-    });
-  }
+  return storageService.query(EMAIL_KEY).then((mails) => {
+    if (filterBy.txt) {
+      const filterText = filterBy.txt.toLowerCase();
+      mails = mails.filter(
+        (mail) =>
+          mail.subject.toLowerCase().includes(filterText) ||
+          mail.body.toLowerCase().includes(filterText) ||
+          mail.from.toLowerCase().includes(filterText)
+      );
+    }
+    if (filterBy.isRead) {
+      mails = mails.filter((mail) => mail.isRead);
+    }
+    if (filterBy.isSent) {
+      mails = mails.filter((mail) => mail.isSent);
+    }
+    if (!filterBy.isSent) {
+      mails = mails.filter((mail) => !mail.isSent);
+    }
+    if (filterBy.isStared) {
+      mails = mails.filter((mail) => mail.isStared);
+    }
+    if (filterBy.isDraft) {
+      mails = mails.filter((mail) => mail.isDraft);
+    }
+    if (filterBy.isDraft === false) {
+      mails = mails.filter((mail) => !mail.isDraft);
+    }
+    if (!filterBy.removedAt) {
+      mails = mails.filter((mail) => !mail.removedAt);
+    }
+    if (filterBy.removedAt) {
+      mails = mails.filter((mail) => mail.removedAt);
+    }
+
+    mails.sort((mail1, mail2) => mail2.sentAt - mail1.sentAt);
+
+    return mails;
+  });
+}
   
   function get(mailId) {
     return storageService.get(EMAIL_KEY, mailId);
-    // return axios.get(CAR_KEY, carId)
+
   }
   
   function remove(mailId) {
@@ -177,7 +203,56 @@ function query(filterBy = {}) {
           removedAt: null,
           from: 'support@company.com',
           to: 'user@appsus.com',
+          },{
+            id: 'e108',
+            subject: 'Important Announcement',
+            body: 'We have an important announcement to share with you. Please read this message for more details.',
+            isRead: false,
+            sentAt: 1673459200000,
+            removedAt: null,
+            from: 'announcement@company.com',
+            to: 'user@appsus.com',
           },
+          {
+            id: 'e109',
+            subject: 'Weekly Newsletter',
+            body: 'Here is your weekly newsletter with updates, news, and articles.',
+            isRead: true,
+            sentAt: 1674459200000,
+            removedAt: null,
+            from: 'newsletter@company.com',
+            to: 'user@appsus.com',
+          },
+          {
+            id: 'e110',
+            subject: 'Meeting Reminder',
+            body: 'Just a reminder that we have a meeting scheduled for this week. Please make sure to attend.',
+            isRead: false,
+            sentAt: 1675459200000,
+            removedAt: null,
+            from: 'manager@company.com',
+            to: 'user@appsus.com',
+          },
+          {
+            id: 'e111',
+            subject: 'New Job Opportunity',
+            body: 'We have a new job opportunity that matches your skills and experience. Would you like to apply?',
+            isRead: false,
+            sentAt: 1676459200000,
+            removedAt: null,
+            from: 'hr@company.com',
+            to: 'user@appsus.com',
+          },
+          {
+            id: 'e112',
+            subject: 'Thank You for Your Feedback',
+            body: 'Thank you for providing feedback on our products and services. We appreciate your input.',
+            isRead: true,
+            sentAt: 1677459200000,
+            removedAt: null,
+            from: 'feedback@company.com',
+            to: 'user@appsus.com',
+          }
     ];
 
         utilService.saveToStorage(EMAIL_KEY, emails);

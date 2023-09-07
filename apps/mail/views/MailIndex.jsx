@@ -39,8 +39,10 @@ export function MailIndex() {
   return (
     <div>
       <MailBoxFilter onSetFilter={onSetFilter} filterBy={filterBy} />
+      <div className="serch-list">
       <MailSearchFilter onSetFilter={onSetFilter} filterBy={filterBy} />
       <MailList mails={mails} onHandleDelete={onHandleDelete} onHandleStar={onHandleStar} />
+      </div>
     </div>
   );
 }
