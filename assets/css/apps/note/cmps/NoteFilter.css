@@ -1,28 +1,41 @@
 .note-filter {
-	padding: 10px;
-	background-color: #f5f5f5;
-	border-radius: 4px;
-	margin-bottom: 20px;
-}
-
-.note-filter form {
-	display: flex;
-	align-items: center;
-}
-
-.note-filter input [type='text'] {
-	flex: 1;
-	border: none;
-	padding: 8px 12px;
-	margin-right: 10px;
-	font-size: 14px;
-	background-color: transparent;
-}
-
-.note-filter input[type='text']::placeholder {
-	color: #888;
-}
-
-.note-filter input[type='text']:focus {
-	outline: none;
-}
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .note-filter form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .note-filter input[type="text"] {
+    flex: 1;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 10px;
+    font-size: 14px;
+    background-color: transparent;
+  }
+  
+  .note-filter input[type="text"]::placeholder {
+    color: #888;
+  }
+  
+  .note-filter input[type="text"]:focus {
+    outline: none;
+  }
+  
+  .note-filter button {
+    border: none;
+    background-color: transparent;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .note-filter button:hover {
+    color: #333;
+  }
+  
