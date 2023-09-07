@@ -1,6 +1,5 @@
 .note-preview {
 	position: relative;
-	/* min-height: 200px; */
 	height: auto;
 	display: flex;
 	flex-direction: column;

@@ -1,0 +1,9 @@
+.video-container {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.note-video {
+	position: relative;
+}
