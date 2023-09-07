@@ -38,14 +38,6 @@ export function MailBoxFilter ({ filterBy, onSetFilter }){
           setInboxCount(count);
         });
       }
-
-      function countStarred() {
-        let count = 0;
-        mailService.query({ isStared: true }).then((starredMails) => {
-          count = starredMails.length;
-          setStarredCount(count);
-        });
-      }
     
     return (
         <section>
