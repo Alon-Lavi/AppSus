@@ -43,6 +43,11 @@ export function MailIndex() {
   }
   return (
     <div>
+       <button 
+             onClick={() => setShowCompose((prevState) => !prevState)} className="compose-btn">
+             <i className="fa-solid fa-pen"></i>
+              Compose
+             </button>
       <MailBoxFilter 
                onSetFilter={onSetFilter} 
                 filterBy={filterBy} />
@@ -57,6 +62,7 @@ export function MailIndex() {
                 onHandleDelete={onHandleDelete}
                 onHandleStar={onHandleStar} />
       </div>
+      {showCompose && <MailCompose setShowCompose={setShowCompose} />}
     </div>
   );
 }
