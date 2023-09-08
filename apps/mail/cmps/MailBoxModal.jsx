@@ -15,7 +15,7 @@ export function MailBoxModal({ setFilterByToEdit, inboxCount, isMenuOpen }) {
 				}}
 			>
 				<div>
-					<i className="fa-solid fa-inbox"></i>
+					<i className="fa-solid fa-inbox"></i>Inbox
 				</div>
 
 				<span className="count">{inboxCount}</span>
@@ -29,7 +29,7 @@ export function MailBoxModal({ setFilterByToEdit, inboxCount, isMenuOpen }) {
 				}}
 			>
 				<div>
-					<i className="fa-regular fa-star box-star"></i>
+					<i className="fa-regular fa-star box-star"></i>Starred
 				</div>
 			</button>
 
@@ -41,7 +41,7 @@ export function MailBoxModal({ setFilterByToEdit, inboxCount, isMenuOpen }) {
 				}}
 			>
 				<div>
-					<i className="fa-solid fa-book-open"></i>
+					<i className="fa-solid fa-book-open"></i>Read
 				</div>
 			</button>
 
@@ -53,7 +53,7 @@ export function MailBoxModal({ setFilterByToEdit, inboxCount, isMenuOpen }) {
 				}}
 			>
 				<div>
-					<i className="fa-regular fa-paper-plane"></i>
+					<i className="fa-regular fa-paper-plane"></i>Sent
 				</div>
 			</button>
 
@@ -65,7 +65,7 @@ export function MailBoxModal({ setFilterByToEdit, inboxCount, isMenuOpen }) {
 				}}
 			>
 				<div>
-					<i className="fa-regular fa-note-sticky"></i>
+					<i className="fa-regular fa-note-sticky"></i>Drafts
 				</div>
 			</button>
 
@@ -77,7 +77,7 @@ export function MailBoxModal({ setFilterByToEdit, inboxCount, isMenuOpen }) {
 				}}
 			>
 				<div>
-					<i className="fa-regular fa-trash-can filter-trash"></i>
+					<i className="fa-regular fa-trash-can filter-trash"></i>Trash
 				</div>
 			</button>
 		</div>

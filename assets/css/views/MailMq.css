@@ -1,0 +1,121 @@
+@media (max-width: 700px) {
+  .mail-item a {
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+  }
+
+  .box-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-inline-start: 1px solid #ccc;
+
+    width: 50% !important;
+    transform: translateX(-100%);
+    z-index: 1;
+    transition: transform 0.6s, box-shadow 0.6s;
+  }
+  .compose-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    border-inline-start: 1px solid #ccc;
+    min-width: 200px;
+    width: 50% !important;
+    transform: translateX(100%);
+    z-index: 1;
+    transition: transform 0.6s, box-shadow 0.6s;
+  }
+  .open {
+    transform: translateX(0);
+    box-shadow: -1px 1px 20px rgb(0 0 0 / 50%);
+  }
+  .mail-index {
+    display: flex;
+    flex-direction: column;
+    font-size: 8px;
+  }
+  .mail-list {
+    font-size: 10px;
+  }
+  .compose-filter-box-container {
+    display: flex;
+    justify-content: right;
+    margin-inline-end: 1.5rem;
+  }
+
+  .mail-filter {
+    position: absolute;
+    top: 70px;
+    left: 50px;
+  }
+  .mail-filter input {
+    width: 70% !important;
+  }
+  .menu-button {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    font-size: 20px;
+  }
+
+  .mail-details {
+    width: 50%;
+  }
+  .mail-list {
+    margin: 0;
+  }
+}
+
+@media (min-width: 700px) {
+  .mail-item a {
+    grid-template-columns: 27% 60% 10%;
+  }
+  .mail-list {
+    font-size: 10px;
+  }
+  .mobile-container {
+    display: flex;
+  }
+  .menu-button {
+    display: none;
+  }
+  .mail-index {
+    background-color: rgb(247, 248, 252);
+    font-family: sans-serif;
+    /* display: grid;
+    grid-template-columns: 230px 1fr 50px; */
+    height: 94vh;
+    font-size: 12px;
+  }
+  .search-list-container {
+    width: 95%;
+    padding-right: 30px;
+  }
+  .mail-details {
+    width: 37.5rem;
+  }
+  .mail-list {
+    margin-inline-start: 1.5rem;
+  }
+  .mail-filter {
+    margin-inline-start: 1rem;
+  }
+  .compose-container {
+    height: 60%;
+  }
+}
+@media (min-width: 800px) {
+  .mail-list {
+    font-size: 12px;
+  }
+}
+@media (max-width: 400px) {
+  .fa-react {
+    display: none !important;
+  }
+}

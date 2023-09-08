@@ -70,56 +70,56 @@ export function MailDetails() {
 		}
 	}
 
-	return (
-		<div className="mail-details">
-			<div className="mail-details-top">
-				<h2>{mail.subject}</h2>
-				<div className="corner-detail-btns">
-					<div className="tool-tip-button">
-						<i className="fa-solid fa-arrow-left" onClick={() => onBack()}></i>
-						<span className="tooltip">Go Back</span>
-					</div>
-					<div className="tool-tip-button">
-						<i onClick={saveToNote} className="fa-regular fa-paper-plane save-note"></i>
-						<span className="tooltip">Save note</span>
-					</div>
-				</div>
-			</div>
-			<div className="mail-details-top-container">
-				<div>
-					<p className="mail-details-from">From: {mail.from}</p>
-					<p className="mail-details-to">To: {mail.to}</p>
-				</div>
-				<p>{new Date(mail.sentAt).toLocaleString()}</p>
-			</div>
-			<p>{mail.body}</p>
-			<div className="mail-details-bottom">
-				<div className="tool-tip-button">
-					<i
-						className="fa-solid fa-angle-left"
-						onClick={() => {
-							onLast()
-						}}
-					></i>
+  return (
+    <div className="mail-details">
+      <div className="mail-details-top">
+        <h2>{mail.subject}</h2>
+        <div className="corner-detail-btns">
+          <div class="tool-tip-button">
+            <i className="fa-solid fa-arrow-left" onClick={() => onBack()}></i>
+            <span class="tooltip">Go Back</span>
+          </div>
+          <div class="tool-tip-button">
+            <i onClick={saveToNote} className="fa-regular fa-paper-plane save-note"></i>
+            <span class="tooltip">Save to note</span>
+          </div>
+        </div>
+      </div>
+      <div className="mail-details-top-container">
+        <div>
+          <p className="mail-details-from">From: {mail.from}</p>
+          <p className="mail-details-to">To: {mail.to}</p>
+        </div>
+        <p>{new Date(mail.sentAt).toLocaleString()}</p>
+      </div>
+      <p>{mail.body}</p>
+      <div className="mail-details-bottom">
+        <div class="tool-tip-button">
+          <i
+            className="fa-solid fa-angle-left"
+            onClick={() => {
+              onLast();
+            }}
+          ></i>
 
-					<span className="tooltip">Last Mail</span>
-				</div>
-				<div className="tool-tip-button">
-					<i
-						className="fa-solid fa-angle-right"
-						onClick={() => {
-							onNext()
-						}}
-					></i>
+          <span class="tooltip">Last Mail</span>
+        </div>
+        <div class="tool-tip-button">
+          <i
+            className="fa-solid fa-angle-right"
+            onClick={() => {
+              onNext();
+            }}
+          ></i>
 
-					<span className="tooltip">Next Mail</span>
-				</div>
-				{mail.isDraft && (
-					<button className="mail-details-edit" onClick={onEdit}>
-						Edit
-					</button>
-				)}
-			</div>
-		</div>
-	)
+          <span class="tooltip">Next Mail</span>
+        </div>
+        {mail.isDraft && (
+          <button className="mail-details-edit" onClick={onEdit}>
+            Edit
+          </button>
+        )}
+      </div>
+    </div>
+  );
 }

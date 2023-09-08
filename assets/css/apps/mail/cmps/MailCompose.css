@@ -1,68 +1,70 @@
 .compose-container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    bottom: 0.625rem;
-    right: 3.125rem;
-    width: 45%;
-    height: 50%;
-  
-    justify-content: space-between;
-    background-color: white;
-    border: 1px solid #d1d1d1;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-  }
-  .compose-btn {
-    width: 100%;
-    margin-block-end: 20px;
-  
-    height: 3.4375rem;
-  }
-  .compose-box-filter button{
-    background-color: #e7ebf8;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-  }
-  .compose-item {
-    width: 99%;
-    border: none;
-    border-bottom: 0.7px solid gray;
-    outline: none;
-  }
-  .compose-text-area {
-    margin: 1;
-    height: 100%;
-  
-    padding: 0.025rem;
-  }
-  .compose-text-area textarea {
-    height: 100%;
-    width: 98%;
-    border: 1px solid lightgrey;
-  }
-  .header-cmp{
-    background-color: #e7ebf8;
-    height: 2rem;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.325rem;
-  }
-  .compose-subject{
-    margin:0;
-    padding: 0.325rem;
-  }
-  .compose-submit {
-    padding: 0.325rem;
-    height: 4rem;
-    background-color: rgb(215, 215, 233);
-    border: 1px solid gray;
-  
-    border-radius: 5px;
-  }
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0.625rem;
+  right: 1.810rem;
+  width: 25%;
+  height: 50%;
+
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid #d1d1d1;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+.compose-btn {
+  width: 100%;
+  margin-block-end: 0px;
+
+  height: 3.8375rem;
+}
+.compose-filter-box-container button {
+  background-color: #f7f8fc;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.compose-item {
+  width: 99%;
+  border: none;
+  border-bottom: 0.7px solid gray;
+  outline: none;
+}
+.compose-text-area {
+  margin: 0;
+  height: 100%;
+
+  padding: 0.625rem;
+}
+.compose-text-area textarea {
+  height: 99%;
+  width: 98.5%;
+  border: none;
+}
+.header-cmp {
+  background-color: rgb(234, 239, 255);;
+  height: 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.625rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.compose-subject {
+  margin: 0px;
+  padding: 1.625rem;
+}
+.compose-submit {
+  padding: 0.625rem;
+  background-color: rgb(234, 239, 255);
+  border: 1px solid gray;
+
+  border-radius: 100px;
+}
   .close-button{
 
     background-color: inherit;

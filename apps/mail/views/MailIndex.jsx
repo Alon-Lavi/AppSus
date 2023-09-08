@@ -45,21 +45,22 @@ export function MailIndex() {
 		setFilterBy((prevFilterBy) => ({ ...prevFilterBy, ...filterBy }))
 	}
 	return (
-		<div>
-      <div className="compose-box-filter">
-			<button onClick={() => setShowCompose((prevState) => !prevState)} className="compose-btn">
-				<i className="fa-solid fa-pen"></i>
-				Compose
-			</button>
+    <section className="mail-index">
+    <div className="mobile-container">
+      <div className="compose-filter-box-container">
+        <button onClick={() => setShowCompose((prevState) => !prevState)} className="compose-btn">
+          <i className="fa-solid fa-pen"></i>
+          Compose
+        </button>
+        <MailBoxFilter onSetFilter={onSetFilter} filterBy={filterBy} />
       </div>
-			<MailBoxFilter onSetFilter={onSetFilter} filterBy={filterBy} />
+      <div className="search-list-container">
+        <MailSearchFilter onSetFilter={onSetFilter} filterBy={filterBy} />
+        <MailList mails={mails} onHandleDelete={onHandleDelete} onHandleStar={onHandleStar} />
+      </div>
+    </div>
 
-			<div className="serch-list">
-				<MailSearchFilter onSetFilter={onSetFilter} filterBy={filterBy} />
-
-				<MailList mails={mails} onHandleDelete={onHandleDelete} onHandleStar={onHandleStar} />
-			</div>
-			{showCompose && <MailCompose setShowCompose={setShowCompose} />}
-		</div>
-	)
+    {showCompose && <MailCompose setShowCompose={setShowCompose} />}
+  </section>
+);
 }
