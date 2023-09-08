@@ -1,4 +1,4 @@
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .mail-item  {
     display: grid;
     grid-template-columns: 40% 40% 20%;
@@ -74,23 +74,21 @@
 
 @media (min-width: 700px) {
   .mail-item a {
-    grid-template-columns: 17% 60% 10%;
+    grid-template-columns: 27% 60% 10%;
   }
   .mail-list {
-    font-size: 10px;
+    font-size: 30px;
   }
   .mobile-container {
     display: flex;
   }
   .menu-button {
-    display: none;
+    display: e;
   }
   .mail-index {
     background-color: rgb(247, 248, 252);
     font-family: sans-serif;
-    /* display: grid;
-    grid-template-columns: 230px 1fr 50px; */
-    height: 94vh;
+    height: 100vh;
     font-size: 12px;
   }
   .search-list-container {

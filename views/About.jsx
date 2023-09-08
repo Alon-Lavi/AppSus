@@ -3,7 +3,7 @@ export function About() {
     const teamMembers = [
         {
             name: "Daniel Kirushin",
-            // image: "./assets/img/lupin.jpg",
+            image: "./assets/img/daniel.jpg",
             description: "short description .",
             // facebook: "https://facebook-url.com",
             // linkedin: "https://linkedin-url.com",
