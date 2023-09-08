@@ -1,0 +1,38 @@
+.about {
+    display: flex;
+    text-align: center;
+    margin-right: 200px;
+    
+}
+
+.team-member {
+    margin: 10px auto;
+    width: 30%;
+    max-width: 300px;
+    padding: 20px;
+}
+
+.profile-picture {
+   
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.social-media-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.fa-facebook{
+    color: #4267b2;
+}
+
+.fa-linkedin{
+    color:#0072b1;
+}
+
+.fa-github{
+    color: black;
+}

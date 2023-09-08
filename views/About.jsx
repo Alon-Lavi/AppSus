@@ -21,10 +21,10 @@ export function About() {
 
     return (
         <section className="about">
-            <h1>About Page</h1>
+            <h1>Project create:</h1>
             {teamMembers.map((member, index) => (
                 <div key={index} className="team-member">
-                    <img src={member.image} alt={member.name} className="profile-picture" />
+                    <img src={member.image}  className="profile-picture" />
                     <h2>{member.name}</h2>
                     <p>{member.description}</p>
                     <div className="social-media-links">
