@@ -34,7 +34,7 @@ export function NoteIndex() {
 			.save(duplicatedNote)
 			.then((res) => {
 				setNotes((prevNotes) => [res, ...prevNotes])
-				showSuccessMsg(`Note successfully duplicated!`)
+				showSuccessMsg(`Note duplicated successfully!`)
 			})
 			.catch((err) => {
 				console.log('Had issues posting note', err)
@@ -48,7 +48,7 @@ export function NoteIndex() {
 			.then(() => {
 				const updatedNotes = notes.filter((note) => note.id !== noteId)
 				setNotes(updatedNotes)
-				showSuccessMsg(`Note successfully removed!`)
+				showSuccessMsg(`Note removed successfully!`)
 			})
 			.catch((err) => {
 				console.log('Had issues removing note', err)

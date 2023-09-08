@@ -40,7 +40,7 @@ export function NoteAdd({ setNotes }) {
 			.save(newNote)
 			.then((res) => {
 				setNotes((prevNotes) => [res, ...prevNotes])
-				showSuccessMsg(`Note successfully added! `)
+				showSuccessMsg(`Note added successfully!`)
 			})
 			.catch((err) => {
 				console.log('Had issues posting note', err)
