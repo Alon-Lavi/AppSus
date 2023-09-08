@@ -81,7 +81,7 @@ export function MailDetails() {
 					</div>
 					<div className="tool-tip-button">
 						<i onClick={saveToNote} className="fa-regular fa-paper-plane save-note"></i>
-						<span className="tooltip">Save to note</span>
+						<span className="tooltip">Save note</span>
 					</div>
 				</div>
 			</div>

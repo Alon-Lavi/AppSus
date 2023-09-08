@@ -34,7 +34,7 @@
   .mail-details-edit {
     background-color: inherit;
     border: none;
-    margin-inline-start: 5rem;
+    margin-inline-start: 10rem;
     margin-block-start: 20px;
   }
   .mail-details-edit:hover {
@@ -68,3 +68,4 @@
   .corner-detail-btns {
     display: flex;
   }
+  

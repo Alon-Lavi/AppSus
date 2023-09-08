@@ -24,7 +24,7 @@ export function MailCompose({ setShowCompose }) {
       loadMail();
     }
   }, []);
-  
+
   function loadMail() {
     mailService
       .get(mailId)
@@ -98,14 +98,14 @@ export function MailCompose({ setShowCompose }) {
   return (
     <form className="compose-container" onSubmit={handleSubmit}>
       <div>
-        <div className="compose-header">
+        <div className="header-cmp">
           <label>{mail ? 'Edit Message' : 'New Message'}</label>
-          <button onClick={handleCancel} className="x-button">
+          <button onClick={handleCancel} className="close-button">
            &#8617;
           </button>
         </div>
 
-        <div className="compose-to-subject-div">
+        <div className="compose-subject">
           <input className="compose-item" type="text" id="to" name="to" value={formData.to} onChange={handleChange} placeholder="To" />
 
           <input

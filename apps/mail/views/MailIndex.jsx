@@ -46,10 +46,12 @@ export function MailIndex() {
 	}
 	return (
 		<div>
+      <div className="compose-box-filter">
 			<button onClick={() => setShowCompose((prevState) => !prevState)} className="compose-btn">
 				<i className="fa-solid fa-pen"></i>
 				Compose
 			</button>
+      </div>
 			<MailBoxFilter onSetFilter={onSetFilter} filterBy={filterBy} />
 
 			<div className="serch-list">
