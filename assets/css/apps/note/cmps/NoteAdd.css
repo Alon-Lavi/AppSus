@@ -28,3 +28,8 @@
 	font-weight: bold;
 	text-align: center;
 }
+
+.note-add-input {
+	background-color: #f5f5f5;
+	border-style: dashed;
+}

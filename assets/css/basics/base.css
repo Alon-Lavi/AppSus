@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
 	margin: 0;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -12,13 +16,20 @@ h6 {
 	margin: 0;
 }
 
+p {
+	margin: 0 0 1em;
+}
+
 a {
 	text-decoration: none;
-	color: inherit;
+	/* color: inherit; */
+	color: unset;
+	cursor: pointer;
 }
 
 img {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+	max-width: 100%;
 }

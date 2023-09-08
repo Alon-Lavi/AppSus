@@ -4,6 +4,8 @@
 /* Basics */
 @import './basics/base.css';
 @import './basics/helpers.css';
+@import './basics/layout.css';
+@import './basics/forms.css';
 
 /* Views */
 @import './views/home.css';
@@ -33,3 +35,11 @@
 @import './apps/mail/cmps/MailCompose.css';
 /* @import './apps/mail/cmps/MailList.css'; */
 /* @import './apps/mail/cmps/MailList.css'; */
+
+/* Book */
+@import './apps/book/cmps/BookDetails.css';
+@import './apps/book/cmps/BookEdit.css';
+@import './apps/book/cmps/BookList.css';
+@import './apps/book/cmps/BookFilter.css';
+
+

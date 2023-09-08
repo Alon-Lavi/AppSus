@@ -9,6 +9,7 @@ export const utilService = {
 	saveToStorage,
 	loadFromStorage,
 	getMailDate,
+	getCurrencySymbol,
 }
 
 function makeId(length = 6) {
@@ -149,5 +150,16 @@ function getMailDate(date) {
 		const minutes = date.getMinutes()
 		const ampm = hours >= 12 ? 'am' : 'pm'
 		return `${hours}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`
+	}
+}
+
+function getCurrencySymbol(currencyCode) {
+	switch (currencyCode) {
+		case 'EUR':
+			return '€'
+		case 'ILS':
+			return '₪'
+		case 'USD':
+			return '$'
 	}
 }
