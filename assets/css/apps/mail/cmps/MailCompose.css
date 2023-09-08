@@ -17,27 +17,34 @@
 .compose-btn {
   width: 100%;
   margin-block-end: 0px;
-
+  background-color: #d1d1d1;
+  
   height: 3.8375rem;
+}
+.mail-index .compose-btn{
+  border: 1px solid lightgrey;
+  margin-bottom: 1;
+  
 }
 .compose-filter-box-container button {
   background-color: #f7f8fc;
   border: none;
   cursor: pointer;
   text-align: left;
+  
 }
 
 .compose-item {
   width: 99%;
   border: none;
-  border-bottom: 0.7px solid gray;
+  border-bottom: 1.7px solid gray;
   outline: none;
 }
 .compose-text-area {
   margin: 0;
   height: 100%;
 
-  padding: 0.625rem;
+  padding: 1.625rem;
 }
 .compose-text-area textarea {
   height: 99%;

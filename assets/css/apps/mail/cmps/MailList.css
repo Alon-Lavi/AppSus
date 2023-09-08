@@ -1,42 +1,39 @@
 /* mail list */
 .mail-read {
   color: rgb(0, 0, 0);
-  background-color: #e0e8fc;
-  font-weight: 400 !important;
+  background-color: #dad9d985;
+  font-weight: 500 !important;
 }
 .list-item-hover {
-  border: 1px solid #d1d1d1;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
 }
 ul {
   list-style-type: none;
 }
 .golden-star {
-  color: rgb(254, 205, 30);
+  color: rgb(252, 197, 0);
+ 
 }
-/* .mail-index-from {
-  margin-inline-start: 2rem;
-} */
-/* .mail-index-subject {
-  margin-inline-start: 5rem;
-} */
+.mail-index-subject {
+  margin-inline-start: 0.1rem;
+}
 .mail-item a {
   display: flex;
   height: 100%;
   align-content: center;
 }
 .mail-item {
-  font-weight: 600;
+  font-weight: 500;
   width: 100%;
   display: flex;
-  height: 2.5rem;
+  height: 3.53rem;
   align-items: center;
-  border-bottom: 0.1px solid rgb(192, 192, 192);
+  border-bottom: 1px solid rgb(192, 192, 192);
 }
 .mail-trash {
   cursor: pointer;
   position: absolute;
-  right: 4.0625rem;
+  right: 9.0rem;
 }
 .fa-star {
   cursor: pointer;
@@ -50,7 +47,7 @@ ul {
   /* width: 91%; */
 }
 .mail-link {
-  width: 100%;
+  width: 150%;
 
   /* height: 100%; */
 }
@@ -61,11 +58,12 @@ ul {
   display: flex;
 }
 .mail-star {
-  margin-inline-start: 10px;
+  margin-inline-start:20px;
+  height: 10px;
 }
 .golden-star {
-  margin-inline-start: 10px;
+  margin-inline-start: 20px;
 }
 .mail-index-from {
-  margin-inline-start: 10px;
+  margin-inline-start: 50px;
 }

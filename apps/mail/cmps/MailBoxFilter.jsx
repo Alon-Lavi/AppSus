@@ -46,7 +46,7 @@ export function MailBoxFilter({ filterBy, onSetFilter }) {
 	return (
 		<section>
 			<button className="menu-button" onClick={() => setIsMenuOpen((prevState) => !prevState)}>
-				<i className="fa-solid fa-bars"></i>
+				<i className="fa-solid fa-bars"></i>menu
 			</button>
 
 			<div ref={menuRef}>

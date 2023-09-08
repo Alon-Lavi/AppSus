@@ -136,6 +136,7 @@ function getLastMailId(mailId) {
 }
 
 function _createEmails() {
+	
 	let emails = utilService.loadFromStorage(EMAIL_KEY) || []
 
 	if (!emails || !emails.length) {

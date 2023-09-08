@@ -2,7 +2,7 @@
     display: flex;
   }
   .mail-details-top i {
-    margin-inline-start: 40px;
+    margin-inline-start: 10px;
     margin-inline-end: 10px;
   }
   .mail-details-bottom {
@@ -16,15 +16,15 @@
   }
   .mail-details {
     font-family: sans-serif;
-  
-    border: 1px solid #d1d1d1;
+    width: auto;
+    border:1px solid #d1d1d1;
     border-radius: 5px;
-    padding: 1.25rem;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+    padding: 3.25rem;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
   }
   
   .mail-details-top-container {
-    font-size: 15px;
+    font-size: 25px;
     display: flex;
     justify-content: space-between;
   }
