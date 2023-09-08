@@ -52,8 +52,11 @@ export function NoteAdd({ setNotes }) {
 
 	return (
 		<form className="note-add" onSubmit={handleNoteAdd}>
+			<label className="note-add-label" htmlFor="text">Add New Note:</label>
 			<div className="note-add-input-container">
 				<input
+					id="text"
+					name="text"
 					type="text"
 					placeholder={
 						newNoteType === 'video'

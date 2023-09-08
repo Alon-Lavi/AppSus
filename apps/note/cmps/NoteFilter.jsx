@@ -16,31 +16,17 @@ export function NoteFilter({ onSetFilter }) {
 		})
 	}
 
-	function onSubmitFilter(ev) {
-		ev.preventDefault()
-		onSetFilter(filterByToEdit)
-	}
-
 	return (
 		<section className="note-filter">
-			<form className="onsubmit" onSubmit={onSubmitFilter}>
-				<input
-					type="text"
-					id="txt"
-					name="txt"
-					placeholder="Search by text"
-					value={filterByToEdit.txt}
-					onChange={handleChange}
-				/>
-
-				<input
-					type="text"
-					id="type"
-					name="type"
-					placeholder="Search by type"
-					value={filterByToEdit.type}
-					onChange={handleChange}
-				/>
+			<form className="onsubmit">
+				<label className="note-filter-label" htmlFor="type">Filter by type:</label>
+				<select className="select-btn" id="type" name="type" value={filterByToEdit.type} onChange={handleChange}>
+					<option value="">Select Type</option>
+					<option value="txt">Text</option>
+					<option value="img">Image</option>
+					<option value="todo">Todo List</option>
+					<option value="video">Video</option>
+				</select>
 			</form>
 		</section>
 	)

@@ -1,6 +1,8 @@
 .note-add-input-container {
 	display: flex;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .note-add-type-indicator {
@@ -16,4 +18,13 @@
 
 .note-type-btn i {
 	font-size: 20px;
+}
+
+.note-type-btn.active i {
+	color: rgb(90, 181, 255);
+}
+
+.note-add-label {
+	font-weight: bold;
+	text-align: center;
 }

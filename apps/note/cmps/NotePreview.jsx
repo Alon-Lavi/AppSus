@@ -38,7 +38,7 @@ export function NotePreview({ note, onRemoveNote, onDuplicateNote }) {
 			from: 'user@appsus.com',
 		}
 		mailService.save(mappedMail).then((mail) => {
-			navigate(`/mail/${mail.id}`)
+			navigate(`/mail/compose/${mail.id}`)
 		})
 	}
 
