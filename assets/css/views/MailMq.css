@@ -74,7 +74,7 @@
 
 @media (min-width: 700px) {
   .mail-item a {
-    grid-template-columns: 27% 60% 10%;
+    grid-template-columns: 17% 60% 10%;
   }
   .mail-list {
     font-size: 10px;
@@ -110,10 +110,11 @@
     height: 60%;
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .mail-list {
     font-size: 12px;
   }
+
 }
 @media (max-width: 400px) {
   .fa-react {
