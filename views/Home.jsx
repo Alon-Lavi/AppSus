@@ -30,13 +30,13 @@ export function Home() {
 					</div>
 				</Link>
 
-				{/* <Link to="/book">
+				<Link to="/book">
 					<div className="feature">
 						<img src="./assets/img/book.svg" alt="google books" className="feature-image" />
 						<h2>Books</h2>
 						<p>Every book from Google books, in your device! Providing full books descriptions, prices and sale.</p>
 					</div>
-				</Link> */}
+				</Link>
 			</div>
 		</section>
 	)
