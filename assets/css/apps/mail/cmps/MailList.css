@@ -33,7 +33,7 @@ ul {
 .mail-trash {
   cursor: pointer;
   position: absolute;
-  right: 9.0rem;
+  right: 1.0rem;
 }
 .fa-star {
   cursor: pointer;
@@ -65,5 +65,5 @@ ul {
   margin-inline-start: 20px;
 }
 .mail-index-from {
-  margin-inline-start: 50px;
+  margin-inline-start: 20px;
 }
