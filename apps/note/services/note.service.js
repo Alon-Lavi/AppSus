@@ -144,7 +144,7 @@ function _createNotes() {
 				backgroundColor: '#606c38',
 				info: {
 					title: 'Title',
-					txt: utilService.makeLorem(),
+					txt: utilService.makeLorem(50),
 				},
 			},
 			{
