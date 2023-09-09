@@ -12,7 +12,7 @@
     background-color: rgba(255, 255, 255, 0.9);
     border-inline-start: 1px solid #ccc;
 
-    width: 40% !important;
+    width: 50% !important;
     transform: translateX(-100%);
     z-index: 1;
     transition: transform 0.6s, box-shadow 0.6s;
@@ -23,11 +23,11 @@
     left: 0;
 
     background-color: rgba(255, 255, 255, 0.9);
-    border-inline-start: 2px solid #ccc;
+    border-inline-start: 1px solid #ccc;
     min-width: 100px;
     width: 50% !important;
     transform: translateX(100%);
-    z-index: 1;
+    z-index: 2;
     transition: transform 0.6s, box-shadow 0.6s;
   }
   .open {
@@ -40,15 +40,16 @@
     font-size: 18px;
   }
   .mail-list {
-    font-size: 14px;
+    font-size: 17px;
   }
   .compose-filter-box-container {
     display: grid;
     justify-content: right;
-    margin-inline-end: 0.5rem;
+    margin-inline-end: 1.5rem;
     margin-bottom: 5px;
     left: 10px;
-    border: none;
+    cursor: pointer;
+    
   }
 
   .mail-filter {
@@ -58,7 +59,7 @@
     justify-content: center;
     top: 45px;
     left: 150px;
-    /* display: none; */
+    display: none;
   }
   .mail-filter input {
     width: 25% !important;
@@ -83,7 +84,7 @@
 
 @media (min-width: 700px) {
   .mail-item a {
-    grid-template-columns: 27% 60% 10%;
+    grid-template-columns: 30% 60% 4%;
   }
   .mail-list {
     font-size: 10px;
@@ -110,7 +111,7 @@
     width: 37.5rem;
   }
   .mail-list {
-    margin-inline-start: 15pxß;
+    margin-inline-start: 15px;
   }
   .mail-filter {
     margin-inline-start: 1rem;
@@ -121,7 +122,7 @@
 }
 @media (min-width: 800px) {
   .mail-list {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 @media (max-width: 400px) {
