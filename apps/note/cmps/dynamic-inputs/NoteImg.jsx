@@ -28,7 +28,9 @@ export function NoteImg({ note }) {
 					>
 						{note.info.title}
 					</h3>
+
 					<img src={note.info.url} />
+
 					<p
 						ref={noteTxtRef}
 						onKeyUp={(ev) => changeContent(ev)}

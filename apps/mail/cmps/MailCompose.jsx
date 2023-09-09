@@ -9,6 +9,7 @@ export function MailCompose({ setShowCompose }) {
 	const navigate = useNavigate()
 	const now = new Date()
 	const timestamp = now.getTime()
+
 	const [formData, setFormData] = useState({
 		from: 'user@appsus.com',
 		to: '',
@@ -19,6 +20,7 @@ export function MailCompose({ setShowCompose }) {
 		isRead: true,
 		isDraft: false,
 	})
+
 	useEffect(() => {
 		if (mailId) {
 			loadMail()

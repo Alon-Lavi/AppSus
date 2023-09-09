@@ -19,7 +19,10 @@ export function NoteFilter({ onSetFilter }) {
 	return (
 		<section className="note-filter">
 			<form className="onsubmit">
-				<label className="note-filter-label" htmlFor="type">Filter by type:</label>
+				<label className="note-filter-label" htmlFor="type">
+					Filter by type:
+				</label>
+
 				<select className="select-btn" id="type" name="type" value={filterByToEdit.type} onChange={handleChange}>
 					<option value="">Select Type</option>
 					<option value="txt">Text</option>

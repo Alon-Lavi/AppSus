@@ -29,18 +29,13 @@
 
 /* Mail */
 
-/* @import './apps/mail/cmps/MailPreview.css'; */
 @import './apps/mail/cmps/MailList.css';
 @import './apps/mail/cmps/MailButonsFilter.css';
 @import './apps/mail/cmps/MailDetails.css';
 @import './apps/mail/cmps/MailCompose.css';
-/* @import './apps/mail/cmps/MailList.css'; */
-/* @import './apps/mail/cmps/MailList.css'; */
 
 /* Book */
 @import './apps/book/cmps/BookDetails.css';
 @import './apps/book/cmps/BookEdit.css';
 @import './apps/book/cmps/BookList.css';
 @import './apps/book/cmps/BookFilter.css';
-
-

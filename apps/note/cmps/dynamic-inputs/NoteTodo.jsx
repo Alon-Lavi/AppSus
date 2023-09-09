@@ -21,6 +21,7 @@ export function NoteTodo({ note }) {
 			>
 				{note.info.title}
 			</h2>
+
 			<TodoList todos={note.info.todos}></TodoList>
 		</section>
 	)

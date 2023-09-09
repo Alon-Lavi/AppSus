@@ -36,6 +36,7 @@ export function NoteVideo({ note }) {
 			>
 				{note.info.title}
 			</h2>
+
 			<div className="video-container">
 				<iframe
 					width="100%"
@@ -47,6 +48,7 @@ export function NoteVideo({ note }) {
 					allowFullScreen
 				></iframe>
 			</div>
+
 			<p ref={noteTxtRef} onKeyUp={(ev) => changeContent(ev)} contentEditable={true} suppressContentEditableWarning={true}>
 				{note.info.txt}
 			</p>

@@ -1,80 +1,86 @@
 .compose-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  bottom: 0.625rem;
-  right: 1.810rem;
-  width: 25%;
-  height: 50%;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	bottom: 0.625rem;
+	right: 1.81rem;
+	width: 25%;
+	height: 50%;
 
-  justify-content: space-between;
-  background-color: white;
-  border: 1px solid #d1d1d1;
-  border-radius: 20px;
-  background-color: #fff;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+	justify-content: space-between;
+	background-color: white;
+	border: 1px solid #d1d1d1;
+	border-radius: 20px;
+	background-color: #fff;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
 }
+
 .compose-btn {
-  width: 100%;
-  margin-block-end: 0px;
-  background-color: #d1d1d1;
-  
-  height: 2.8375rem;
+	width: 100%;
+	margin-block-end: 0px;
+	background-color: #d1d1d1;
+
+	height: 2.8375rem;
 }
-.mail-index .compose-btn{
-  border: 1px solid lightgrey;
-  margin-bottom: 1;
-  
+
+.mail-index .compose-btn {
+	border: 1px solid lightgrey;
+	margin-bottom: 1;
 }
+
 .compose-filter-box-container button {
-  background-color: #f7f8fc;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  
+	background-color: #f7f8fc;
+	border: none;
+	cursor: pointer;
+	text-align: left;
 }
 
 .compose-item {
-  width: 99%;
-  border: none;
-  border-bottom: 1.7px solid gray;
-  outline: none;
+	width: 99%;
+	border: none;
+	border-bottom: 1.7px solid gray;
+	outline: none;
 }
+
 .compose-text-area {
-  margin: 0;
-  height: 100%;
+	margin: 0;
+	height: 100%;
 
-  padding: 1.625rem;
+	padding: 1.625rem;
 }
+
 .compose-text-area textarea {
-  height: 99%;
-  width: 98.5%;
-  border: none;
+	height: 99%;
+	width: 98.5%;
+	border: none;
 }
+
 .header-cmp {
-  background-color: rgb(234, 239, 255);;
-  height: 3rem;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.625rem;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+	background-color: rgb(234, 239, 255);
+	height: 3rem;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.625rem;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
 }
+
 .compose-subject {
-  margin: 0px;
-  padding: 1.625rem;
+	margin: 0px;
+	padding: 1.625rem;
 }
+
 .compose-submit {
-  padding: 0.625rem;
-  background-color: rgb(234, 239, 255);
-  border: 1px solid gray;
+	padding: 0.625rem;
+	background-color: rgb(234, 239, 255);
+	border: 1px solid gray;
 
-  border-radius: 100px;
+	border-radius: 100px;
 }
-  .close-button{
 
-    background-color: inherit;
-    border: none;
-    cursor: pointer;
-  }
+.close-button {
+	background-color: inherit;
+	border: none;
+	cursor: pointer;
+}

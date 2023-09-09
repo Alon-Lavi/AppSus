@@ -25,6 +25,7 @@ export function MailPreview({ mail, onHandleDelete, onHandleStar }) {
 			) : (
 				<i className="fa-regular fa-star mail-star" onClick={() => onHandleStar(mail)}></i>
 			)}
+
 			<Link to={`/mail/${mail.id}`} className="mail-link">
 				<div className="mail-index-from">{mail.from}</div>
 				<div className="mail-index-subject">{mail.subject}</div>

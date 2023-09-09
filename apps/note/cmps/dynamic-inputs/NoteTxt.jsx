@@ -23,7 +23,7 @@ export function NoteTxt({ note }) {
 			</h3>
 
 			{note.info.url && <p className="note-url">From: {note.info.url}</p>}
-			{}
+
 			<LongTxt note={note} txt={note.info.txt} length={100} />
 		</section>
 	)

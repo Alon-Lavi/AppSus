@@ -76,10 +76,12 @@ function remove(mailId) {
 function deleteToTrash(mailId) {
 	return storageService.query(EMAIL_KEY).then((mails) => {
 		const toTrashMail = mails.find((mail) => mail.id === mailId)
+
 		if (!toTrashMail.removedAt) {
 			toTrashMail.removedAt = new Date()
 			return storageService.put(EMAIL_KEY, toTrashMail)
 		}
+
 		remove(mailId)
 	})
 }

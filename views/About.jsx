@@ -3,9 +3,9 @@ export function About() {
 		{
 			name: 'Daniel Kirushin',
 			image: './assets/img/daniel.jpg',
-			// facebook: "https://facebook-url.com",
-			// linkedin: "https://linkedin-url.com",
-			// github: "https://github.com/OmerHassin"
+			// facebook: "",
+			// linkedin: "",
+			// github: ""
 		},
 		{
 			name: 'Alon Lavi',
@@ -18,7 +18,6 @@ export function About() {
 
 	return (
 		<section className="about">
-			{/* <h1>Collaborators:</h1> */}
 			{teamMembers.map((member, index) => (
 				<div key={index} className="team-member">
 					<img src={member.image} className="profile-picture" />

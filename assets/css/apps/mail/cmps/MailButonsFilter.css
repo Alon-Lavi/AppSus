@@ -1,75 +1,63 @@
 .active-btn {
-  background-color: rgb(223, 232, 247) !important;
-  font-weight: 600;
+	background-color: rgb(223, 232, 247) !important;
+	font-weight: 600;
 }
 .box-filter div i {
-  margin-inline-end: 0.75rem;
+	margin-inline-end: 0.75rem;
 }
 
 .box-filter button {
-  display: flex;
-  justify-content: space-between;
-  padding-inline-start: 1.9rem;
-  border-radius: 10px;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding-inline-start: 1.9rem;
+	border-radius: 10px;
+	align-items: center;
 
-  height: 2.5rem;
+	height: 2.5rem;
 }
 .box-filter {
-  width: 100%;
+	width: 100%;
 }
 .box-star {
-  margin-inline-end: 10px !important;
+	margin-inline-end: 10px !important;
 }
 .list-filter-box-container {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 .box-filter {
-  display: flex;
-  flex-direction: column;
-  width: 130px;
+	display: flex;
+	flex-direction: column;
+	width: 130px;
 
-  padding-top: 10px;
+	padding-top: 10px;
 }
 .compose-btn {
-  margin-block-start: 10px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: #ffffff !important;
-  height: 1.4375rem;
-  border-radius: 10px;
-  margin-inline-start: 10px;
-  width: 100px;
-;
-  
-  height: 5.4375rem;
-  height: 100px;
-  border-radius: 10px;
-  margin-inline-start: 1px;
-  width: 3px;
+	margin-block-start: 10px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: #ffffff !important;
+	height: 1.4375rem;
+	border-radius: 10px;
+	margin-inline-start: 10px;
+	width: 100px;
+	height: 5.4375rem;
+	height: 100px;
+	border-radius: 10px;
+	margin-inline-start: 1px;
+	width: 3px;
 }
 .mail-filter input {
-  margin-block-start: 30px;
-  margin-inline-start: 10px;
-  background-color: #e0e8fc;
-  border: none;
-  height: 2.4rem;
-  width: 400px;
-  border-radius: 4px;
-  text-align: center;
+	margin-block-start: 30px;
+	margin-inline-start: 10px;
+	background-color: #e0e8fc;
+	border: none;
+	height: 2.4rem;
+	width: 400px;
+	border-radius: 4px;
+	text-align: center;
 }
 .count {
-  margin-inline-end: 5px;
+	margin-inline-end: 5px;
 }
-/* .box-filter {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  transition: transform 0.3s ease-in-out;
-  z-index: 1;
-} */

@@ -64,7 +64,9 @@ export function NotePreview({ note, onRemoveNote, onDuplicateNote }) {
 	return (
 		<article className="note-preview" style={{ backgroundColor: color }}>
 			<i onClick={handlePinToggle} className={`pin-btn fas fa-thumbtack${isPinned ? ' pinned' : ''}`}></i>
+
 			<section className="note-content">{DynamicNoteType(note)}</section>
+
 			<section className="tooltip-menu">
 				{isColorPickerOpen && (
 					<div className={`color-picker ${isColorPickerOpen ? 'open' : ''}`}>

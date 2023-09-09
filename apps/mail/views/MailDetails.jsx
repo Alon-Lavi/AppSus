@@ -32,6 +32,7 @@ export function MailDetails() {
 				navigate('/mail')
 			})
 	}
+
 	function saveToNote() {
 		const newNote = noteService.getEmptyNote()
 		newNote.info.title = mail.subject
@@ -50,7 +51,7 @@ export function MailDetails() {
 		loadLastId()
 	}, [mailId])
 
-	if (!mail) return <h1>Loding...</h1>
+	if (!mail) return <h1>Loading...</h1>
 	function onBack() {
 		navigate('/mail')
 	}
