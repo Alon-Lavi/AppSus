@@ -76,7 +76,7 @@ export function BookEdit() {
 				<label htmlFor="price">Price:</label>
 				<input onChange={handleChange} value={listPrice.amount} type="number" name="price" id="price" />
 
-				<button>Save</button>
+				<button className="btn-save">Save</button>
 			</form>
 		</section>
 	)

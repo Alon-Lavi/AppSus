@@ -12,27 +12,26 @@ export function MailPreview({ mail, onHandleDelete, onHandleStar }) {
 
 	return (
 		<li
-		  className={`mail-item ${mail.isRead ? 'mail-read' : ''} ${hover ? 'list-item-hover' : ''}`}
-		  onMouseOver={() => {
-			setHover(true);
-		  }}
-		  onMouseOut={() => {
-			setHover(false);
-		  }}
+			className={`mail-item ${mail.isRead ? 'mail-read' : ''} ${hover ? 'list-item-hover' : ''}`}
+			onMouseOver={() => {
+				setHover(true)
+			}}
+			onMouseOut={() => {
+				setHover(false)
+			}}
 		>
-		  {mail.isStared ? (
-			<i className="fa-solid fa-star golden-star" onClick={() => onHandleStar(mail)}></i>
-		  ) : (
-			<i className="fa-regular fa-star mail-star" onClick={() => onHandleStar(mail)}></i>
-		  )}
-		  <Link to={`/mail/${mail.id}`} className="mail-link">
-			<div className="mail-index-from">{mail.from}</div>
-			<div className="mail-index-subject">{mail.subject}</div>
-	
-			{/* <div>{mail.body}</div> */}
-			{!hover && <div className="mail-date">{mailDateString}</div>}
-		  </Link>
-		  {hover && <i className="fa-regular fa-trash-can mail-trash" onClick={() => onHandleDelete(mail.id)}></i>}
+			{mail.isStared ? (
+				<i className="fa-solid fa-star golden-star" onClick={() => onHandleStar(mail)}></i>
+			) : (
+				<i className="fa-regular fa-star mail-star" onClick={() => onHandleStar(mail)}></i>
+			)}
+			<Link to={`/mail/${mail.id}`} className="mail-link">
+				<div className="mail-index-from">{mail.from}</div>
+				<div className="mail-index-subject">{mail.subject}</div>
+
+				{!hover && <div className="mail-date">{mailDateString}</div>}
+			</Link>
+			{hover && <i className="fa-regular fa-trash-can mail-trash" onClick={() => onHandleDelete(mail.id)}></i>}
 		</li>
-	  );
-	}
+	)
+}

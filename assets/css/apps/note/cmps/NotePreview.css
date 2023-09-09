@@ -111,3 +111,11 @@
 	margin-top: 10px;
 	font-size: smaller;
 }
+
+.note-preview h2 {
+	margin-bottom: 20px;
+}
+
+.note-preview p {
+	margin-top: 20px;
+}

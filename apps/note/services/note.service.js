@@ -15,11 +15,6 @@ export const noteService = {
 
 function query(filterBy = getDefaultFilter()) {
 	return storageService.query(NOTE_KEY).then((notes) => {
-		// if (filterBy.txt) {
-		// 	const regex = new RegExp(filterBy.txt, 'i')
-		// 	notes = notes.filter((note) => regex.test(note.info.txt))
-		// }
-
 		if (filterBy.type) {
 			const regex = new RegExp(filterBy.type, 'i')
 			notes = notes.filter((note) => regex.test(note.type))
