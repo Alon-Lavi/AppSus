@@ -78,7 +78,7 @@ function _createNotes() {
 				type: 'img',
 				isPinned: false,
 				info: {
-					url: '/assets/img/audi.jpg',
+					url: 'https://upload.wikimedia.org/wikipedia/commons/d/dc/Audi_A4_40_TFSI_B9_FL_Ibis_White_%281%29_%28cropped%29.jpg',
 					title: 'Audi!',
 					txt: 'Audi!',
 				},
@@ -135,6 +135,51 @@ function _createNotes() {
 				},
 				backgroundColor: 'transparent',
 				label: 'none',
+			},
+			{
+				id: 'n107',
+				createdAt: 1112233,
+				type: 'txt',
+				isPinned: false,
+				backgroundColor: '#606c38',
+				info: {
+					title: 'Title',
+					txt: utilService.makeLorem(50),
+				},
+			},
+			{
+				id: 'n108',
+				createdAt: 1112234,
+				type: 'txt',
+				isPinned: false,
+				backgroundColor: 'transparent',
+				info: {
+					title: utilService.makeLorem(5),
+					txt: utilService.makeLorem(),
+				},
+			},
+			{
+				id: 'n109',
+				type: 'video',
+				isPinned: false,
+				info: {
+					url: 'https://www.youtube.com/watch?v=wBH9QXZX62U&ab_channel=%D7%91%D7%A8%D7%A7%D7%95%D7%A0%D7%99',
+					title: 'ברקוני',
+					txt: 'תודה למעלית',
+				},
+				backgroundColor: '',
+				label: 'none',
+			},
+			{
+				id: 'n110',
+				type: 'img',
+				isPinned: false,
+				info: {
+					url: 'https://static.wixstatic.com/media/232646_c81e6c9f0f8b4c2e9e5593f197eb663e~mv2.png/v1/fill/w_638,h_638,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/232646_c81e6c9f0f8b4c2e9e5593f197eb663e~mv2.png',
+					title: 'Keith Haring',
+					txt: '',
+				},
+				backgroundColor: '#FBBC05',
 			},
 		]
 
