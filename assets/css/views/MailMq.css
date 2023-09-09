@@ -1,31 +1,30 @@
-@media (max-width: 1000px) {
-  .mail-item  {
+@media (max-width: 700px) {
+  .mail-item a {
     display: grid;
-    grid-template-columns: 40% 40% 20%;
+    grid-template-columns: 50% 30% 10%;
   }
 
   .box-filter {
     position: fixed;
-    top: 0;
+    top: 1;
     left: 0;
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.9);
     border-inline-start: 1px solid #ccc;
 
-    width: 50% !important;
-    transform: translateX(-400%);
+    width: 40% !important;
+    transform: translateX(-100%);
     z-index: 1;
     transition: transform 0.6s, box-shadow 0.6s;
   }
-  
   .compose-container {
     position: fixed;
-    top: 0;
+    bottom: 1;
     left: 0;
 
     background-color: rgba(255, 255, 255, 0.9);
-    border-inline-start: 1px solid #ccc;
-    min-width: 200px;
+    border-inline-start: 2px solid #ccc;
+    min-width: 100px;
     width: 50% !important;
     transform: translateX(100%);
     z-index: 1;
@@ -33,37 +32,47 @@
   }
   .open {
     transform: translateX(0);
-    box-shadow: -1px 1px 20px rgb(0 0 0 / 50%);
+    box-shadow: -3px 1px 20px rgb(0 0 0 / 50%);
   }
   .mail-index {
     display: flex;
     flex-direction: column;
-    font-size: 8px;
+    font-size: 18px;
   }
   .mail-list {
-    font-size: 10px;
+    font-size: 14px;
   }
   .compose-filter-box-container {
-    display: flex;
+    display: grid;
     justify-content: right;
-    margin-inline-end: 1.5rem;
+    margin-inline-end: 0.5rem;
+    margin-bottom: 5px;
+    left: 10px;
+    border: none;
   }
 
   .mail-filter {
     position: absolute;
-    top: 70px;
-    left: 50px;
+    width: 150vh;
+    height: 150px;
+    justify-content: center;
+    top: 45px;
+    left: 150px;
+    /* display: none; */
   }
   .mail-filter input {
-    width: 70% !important;
+    width: 25% !important;
   }
   .menu-button {
-    position: relative;
-    top: 90px;
+    position: absolute;
+    top: 65px;
     left: 0;
+    border: none;
     font-size: 20px;
   }
-
+  /* .menu-button i{
+    width: ;
+  } */
   .mail-details {
     width: 50%;
   }
@@ -77,18 +86,20 @@
     grid-template-columns: 27% 60% 10%;
   }
   .mail-list {
-    font-size: 30px;
+    font-size: 10px;
   }
   .mobile-container {
     display: flex;
   }
   .menu-button {
-    display: e;
+    display: none;
   }
   .mail-index {
     background-color: rgb(247, 248, 252);
     font-family: sans-serif;
-    height: 100vh;
+    /* display: grid;
+    grid-template-columns: 230px 1fr 50px; */
+    /* height: 94vh; */
     font-size: 12px;
   }
   .search-list-container {
@@ -99,7 +110,7 @@
     width: 37.5rem;
   }
   .mail-list {
-    margin-inline-start: 1.5rem;
+    margin-inline-start: 15pxß;
   }
   .mail-filter {
     margin-inline-start: 1rem;
@@ -112,7 +123,6 @@
   .mail-list {
     font-size: 12px;
   }
-
 }
 @media (max-width: 400px) {
   .fa-react {
