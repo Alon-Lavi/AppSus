@@ -103,6 +103,12 @@ export function NotePreview({ note, onRemoveNote, onDuplicateNote }) {
 							style={{ backgroundColor: '#CBF0F8' }}
 							onClick={() => handleChangeNoteColor('#CBF0F8')}
 						></button>
+
+						<button
+							className="color-btn"
+							style={{ backgroundColor: '#606c38' }}
+							onClick={() => handleChangeNoteColor('#606c38')}
+						></button>
 					</div>
 				)}
 
