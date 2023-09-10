@@ -8,6 +8,7 @@
 @import './basics/forms.css';
 
 /* Views */
+
 @import './views/Home.css';
 @import './apps/note/views/NoteIndex.css';
 @import './apps/mail/views/MailIndex.css';
